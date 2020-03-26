@@ -15,7 +15,7 @@ Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan
 - [x] Why this API: it's relevant -- many ways to filter data and visually display into separate components
 - [x] Code Snippet
 
-...
+```
 {
   "Thailand": [
     {
@@ -29,10 +29,12 @@ Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan
       "confirmed": 3,
       "deaths": 0,
       "recovered": 0
-    },    
-  ],  
+    },  
+    ...  
+  ], 
+  ... 
 }
-...
+```
 
 ## Wireframes
 - [ ] Cloudinary Links with descriptions
@@ -49,7 +51,7 @@ Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan
 Wireframes | |  
 Architecture | |  
 | | Built using Create-React-App  
-| Return Data from API |  
+|  |  Return Data from API  
 5+ Components| |  
 React Router (2+ routes) | |  
 Mobile First | |  
