@@ -19,8 +19,9 @@ Build a website from API using react & to have fun.
 ## Requirements - Build Status
 
 #### MVP Requirements
-###### To DO | ###### In Progress | ###### Done 
-------------|-------------------|-----------
+**To DO** | **In Progress** | **Done**
+------------|-------------------|-----------  
+
 |- [ ] Project Description|
 |- [ ] Project Proposal|
 |- [ ] Prof ReadMe|
