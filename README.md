@@ -9,8 +9,17 @@
 Build a website from API using react & to have fun.
 
 ## API Reference
-Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan 22, 2020.  
+- Source 1 - by country: Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan 22, 2020.  
 (https://github.com/pomber/covid19)  
+
+- Source 2 - by city & country (can filter by country):
+      const res = await fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=Canada", {
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+            "x-rapidapi-key": "6aebfd9cf1mshf5ff7c3037601f8p1d234bjsndbb38607cd6d"
+          }
+        });
 
 - [x] Why this API: it's relevant -- many ways to filter data and visually display into separate components
 - [x] Code Snippet
@@ -45,12 +54,12 @@ Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan
 #### MVP Requirements
 **To DO** | **In Progress** | **Done**
 ------------|-------------------|-----------  
-| Project Description |  
-| Project Proposal |  
-| Prof ReadMe |  
-Wireframes | |  
-Architecture | |  
-| | | Built using Create-React-App  
+|  |  Project Description |
+|  |  Project Proposal |
+|  |  Prof ReadMe |
+|  |  Wireframes |
+|  |  Architecture |
+|  | | Built using Create-React-App  
 |  |  | Return Data from API  
 5+ Components| |  
 React Router (2+ routes) | |  
