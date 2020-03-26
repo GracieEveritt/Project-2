@@ -5,12 +5,36 @@
 -GitHub Repo: (https://github.com/GracieEveritt/Project-2)  
 -Deployment Link:   
 
-## Project Description
+## Project Descriptionß
 Build a website from API using react & to have fun.
 
 ## PI Reference
-- [ ] Why this API
-- [ ] Code Snippet
+Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan 22, 2020.  
+(https://github.com/pomber/covid19)  
+
+- [x] Why this API: it's relevant -- many ways to filter data and visually display into separate components
+- [x] Code Snippet
+
+...
+{
+  "Thailand": [
+    {
+      "date": "2020-1-22",
+      "confirmed": 2,
+      "deaths": 0,
+      "recovered": 0
+    },
+    {
+      "date": "2020-1-23",
+      "confirmed": 3,
+      "deaths": 0,
+      "recovered": 0
+    },
+    ...
+  ],
+  ...
+}
+...
 
 ## Wireframes
 - [ ] Cloudinary Links with descriptions
@@ -22,20 +46,20 @@ Build a website from API using react & to have fun.
 **To DO** | **In Progress** | **Done**
 ------------|-------------------|-----------  
 
-|- [ ] Project Description|
-|- [ ] Project Proposal|
-|- [ ] Prof ReadMe|
-- [ ] Wireframes||
-- [ ] Architecture||
-||- [ ] Built using Create-React-App
-|- [ ] Return Data from API|
-- [ ] 5+ Components||
-- [ ] React Router (2+ routes)||
-- [ ] Mobile First||
-- [ ] Responsive Design||
-- [ ] React Hooks||
-- [ ] Code Clean-Up||
-- [ ] Deployed via Netlify||
+| Project Description|
+| Project Proposal|
+| Prof ReadMe|
+ Wireframes||
+ Architecture||
+|| Built using Create-React-App
+| Return Data from API|
+ 5+ Components||
+ React Router (2+ routes)||
+ Mobile First||
+ Responsive Design||
+ React Hooks||
+ Code Clean-Up||
+ Deployed via Netlify||
 
 
 #### Post-MVP Requirements
@@ -50,10 +74,10 @@ First Component | Description
 
 Date | Task | Time Estimate | Time Invested | Actual Time
 -----|------|---------------|---------------|------------
-Wed, Mar 25 | ReadMe Basic Build | 1 hours | 1 hr 15 min | 
+Wed, Mar 25 | ReadMe Basic Build | 1 hours | 1 hr 15 min | 1 hr 15 min
 Wed, Mar 25 | Project Description | 10 min | 10 min | 10 min
-Wed, Mar 25 | GitHub & VS SetUP | 1 hour | 30 min | 
-Wed, Mar 25 | Research API & Return Data | 2 hours | |
+Wed, Mar 25 | GitHub & VS SetUP | 1 hour | 1 hour | 1 hour
+Wed, Mar 25 | Research API & Return Data | 2 hours | 2 hours|
 
 
 
