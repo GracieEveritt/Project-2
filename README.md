@@ -50,8 +50,8 @@ Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan
 | Prof ReadMe |  
 Wireframes | |  
 Architecture | |  
-| | Built using Create-React-App  
-|  |  Return Data from API  
+| | | Built using Create-React-App  
+|  |  | Return Data from API  
 5+ Components| |  
 React Router (2+ routes) | |  
 Mobile First | |  
@@ -62,7 +62,9 @@ Deployed via Netlify | |
 
 
 #### Post-MVP Requirements
-
+  
+  
+  
 ## Components
 
 Component | Description 
