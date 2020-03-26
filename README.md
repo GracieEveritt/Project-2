@@ -5,10 +5,10 @@
 -GitHub Repo: (https://github.com/GracieEveritt/Project-2)  
 -Deployment Link:   
 
-## Project Descriptionß
+## Project Description
 Build a website from API using react & to have fun.
 
-## PI Reference
+## API Reference
 Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan 22, 2020.  
 (https://github.com/pomber/covid19)  
 
@@ -29,10 +29,8 @@ Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan
       "confirmed": 3,
       "deaths": 0,
       "recovered": 0
-    },
-    ...
-  ],
-  ...
+    },    
+  ],  
 }
 ...
 
@@ -45,21 +43,20 @@ Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan
 #### MVP Requirements
 **To DO** | **In Progress** | **Done**
 ------------|-------------------|-----------  
-
-| Project Description|
-| Project Proposal|
-| Prof ReadMe|
- Wireframes||
- Architecture||
-|| Built using Create-React-App
-| Return Data from API|
- 5+ Components||
- React Router (2+ routes)||
- Mobile First||
- Responsive Design||
- React Hooks||
- Code Clean-Up||
- Deployed via Netlify||
+| Project Description |  
+| Project Proposal |  
+| Prof ReadMe |  
+Wireframes | |  
+Architecture | |  
+| | Built using Create-React-App  
+| Return Data from API |  
+5+ Components| |  
+React Router (2+ routes) | |  
+Mobile First | |  
+Responsive Design | |  
+React Hooks | |  
+Code Clean-Up | |  
+Deployed via Netlify | |  
 
 
 #### Post-MVP Requirements
@@ -77,7 +74,7 @@ Date | Task | Time Estimate | Time Invested | Actual Time
 Wed, Mar 25 | ReadMe Basic Build | 1 hours | 1 hr 15 min | 1 hr 15 min
 Wed, Mar 25 | Project Description | 10 min | 10 min | 10 min
 Wed, Mar 25 | GitHub & VS SetUP | 1 hour | 1 hour | 1 hour
-Wed, Mar 25 | Research API & Return Data | 2 hours | 2 hours|
+Wed, Mar 25 | Research API & Return Data | 2 hours | 2 hours| 2 hours
 
 
 
