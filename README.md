@@ -6,7 +6,7 @@
 -Deployment Link:   
 
 ## Project Description
-Build a website from API using React.js & to have fun.
+Build a website from API using React.js & to have fun. I chose to build an analytics site for Coronavirus because it is a scary reality for us all. After reviewing other developer's approach to present this same data, I think mine will be unique. Currently, no one has done a dashboard for the US. If I have extra time, it would be nice to impelement news as well. 
 
 ## API Reference
 - Source 1 - by country: Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan 22, 2020.  
@@ -49,7 +49,7 @@ Build a website from API using React.js & to have fun.
 - [ x ] [Website Mockups](https://sites.google.com/d/19Pk9x_USmmxNsxOsnGnEKIR9pXDpeCU3/p/19FEgCYl4kPCmdwe99BCl3SDkFi9hbUru/edit)
 - [ x ] [Link to React architecture design](https://docs.google.com/drawings/d/1XntDDW8hJCY4R8sH3TrVLrT_LvlQC0ubv8m9bCkMJ1k/edit?usp=sharing)  
 
-[BackUp to Website Mockup](https://sites.google.com/d/19Pk9x_USmmxNsxOsnGnEKIR9pXDpeCU3/p/1tN8Q63U37-90S-Koy_pe_bJAZNwUrnhp/edit)
+[BackUp to Website Mockup](https://sites.google.com/d/19Pk9x_USmmxNsxOsnGnEKIR9pXDpeCU3/p/1tN8Q63U37-90S-Koy_pe_bJAZNwUrnhp/edit)  
 [BackUP to Architecture](https://docs.google.com/drawings/d/1XntDDW8hJCY4R8sH3TrVLrT_LvlQC0ubv8m9bCkMJ1k/edit)
 
 ## Requirements - Build Status
@@ -112,7 +112,7 @@ Wed, Mar 25 | GitHub & VS SetUP | 1 hour | 1 hour | 1 hour
 Wed, Mar 25 | Research API & Return Data | 2 hours | 2 hours| 2 hours
 Thurs, Mar 26 | Final API Research & Ideas | 1 hour | 1 hour | 1 hour
 Thurs, Mar 26 | Update ReadMe | 1 hour | 1 hour | 1 hour
-Thurs, Mar 26 | Wireframes & Architecture | 2 hours | 1.5 hours | 1.5 hours
+Thurs, Mar 26 | Wireframes & Architecture | 2 hours | 2 hours | 2 hours
 
 
 
