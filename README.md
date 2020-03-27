@@ -47,7 +47,10 @@ Build a website from API using React.js & to have fun.
 
 ## Wireframes & Architecture
 - [ x ] [Website Mockups](https://sites.google.com/d/19Pk9x_USmmxNsxOsnGnEKIR9pXDpeCU3/p/19FEgCYl4kPCmdwe99BCl3SDkFi9hbUru/edit)
-- [ x ] [Link to React architecture design](https://docs.google.com/drawings/d/1XntDDW8hJCY4R8sH3TrVLrT_LvlQC0ubv8m9bCkMJ1k/edit?usp=sharing)
+- [ x ] [Link to React architecture design](https://docs.google.com/drawings/d/1XntDDW8hJCY4R8sH3TrVLrT_LvlQC0ubv8m9bCkMJ1k/edit?usp=sharing)  
+
+[BackUp to Website Mockup](https://sites.google.com/d/19Pk9x_USmmxNsxOsnGnEKIR9pXDpeCU3/p/1tN8Q63U37-90S-Koy_pe_bJAZNwUrnhp/edit)
+[BackUP to Architecture](https://docs.google.com/drawings/d/1XntDDW8hJCY4R8sH3TrVLrT_LvlQC0ubv8m9bCkMJ1k/edit)
 
 ## Requirements - Build Status
 
@@ -83,14 +86,23 @@ Interactive Map 3nd View: Best Recovery Regions - World | |
 Interactive Map 3nd View: Best Recovery Regions - US | |  
 Individual country page - statistics over time (cases, recovery, death) | |  
 Indivivual state page (cases, recovery, death) | |  
+Contact Me Page | Reuse form Project | |
+Hover for Map | Preview data for Country/State | |
   
 ## Components
 
 Component | Description | Estimated Time | Target Finish Date 
 ----------|-------------|----------------|-------------------
-Dashboard | Summary Stats | 1 day | Mon, March 30
+Dashboard | Summary Stats | 1 day | Fri, March 27
+Interactive US Map (1 view) | Depth color indicate hot zones| 1 day | Weekend
+Responsiveness | Move & zoom map for mobile - adapt desktop | 1 day | Mon, March 30
+Interactive US Map (2 views) | Depth for 2 other views| 1/2 day | Tues, March 31
+State Page(s) | Statistics for indivdual states | 1/2 day | Tues, March 31
+Nav/Footer/Contact | Finish Nav/Footer/Final CSS | 1 day | Wed, April 1
+World Interaction | Input same for World | 1/2 day | Thurs, April 2
+Publish & Finalize | Publish site & finalize documentation | 1/2 day | Thurs, April 2
 
-## TimeLine
+## TimeLine - expect total project (56 hours)
 
 Date | Task | Time Estimate | Time Invested | Actual Time
 -----|------|---------------|---------------|------------
@@ -100,12 +112,16 @@ Wed, Mar 25 | GitHub & VS SetUP | 1 hour | 1 hour | 1 hour
 Wed, Mar 25 | Research API & Return Data | 2 hours | 2 hours| 2 hours
 Thurs, Mar 26 | Final API Research & Ideas | 1 hour | 1 hour | 1 hour
 Thurs, Mar 26 | Update ReadMe | 1 hour | 1 hour | 1 hour
-Thurs, Mar 26 | Wireframes & Architecture | 2 hours | |
+Thurs, Mar 26 | Wireframes & Architecture | 2 hours | 1.5 hours | 1.5 hours
 
 
 
 
 ## Credits/Additional Libraries
+1. US Map: https://www.npmjs.com/package/react-usa-map
+2. Map Zoom-Pan: https://www.react-simple-maps.io/examples/zoom-pan/
+3. World Map: https://www.npmjs.com/package/react-world-map
+
 
 ## Code Snippet
 

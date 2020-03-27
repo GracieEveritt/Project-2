@@ -11,7 +11,9 @@
     "react-csv-reader": "^3.0.4",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-usa-map": "^1.4.0",
+    "react-world-map": "^1.0.13"
   },
   "scripts": {
     "start": "react-scripts start",
