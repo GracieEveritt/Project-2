@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+*{
+  /* background-color: #192840; */
   color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
 }
-
-.App-link {
-  color: #61dafb;
+.App{
+  min-width: 320px;
+  max-width: 425px;
+  background-color: #192840;
+  height: 100%;
 }
+.Header {
+  display: flex;
+  width: 425px;
+  /* justify-content: space-between; */
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 40px;
+}
+.Top-Nav{
+  
+}
+.Last-Updated{}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+Button, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
+  background-color: #2C3E5A;
+}
+.Stat-Boxes{
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.Stat-Box {
+  display: flex;
+}
+.Stats {
+ 
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.Total-Cases, .Total-Recoveries{
+  margin-bottom: 5px;
+}
+.Footer{
+  display: flex;
+}
+.Footer-Nav ul{
+  display: flex;
+  justify-content: space-around;
 }

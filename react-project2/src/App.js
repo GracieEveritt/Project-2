@@ -7,24 +7,17 @@ import Footer from './Body/Footer'
 export const CovidDataContext = createContext()
   
   function App() {
-    const [covidData, setCovidData] = useState([])
+    const [covidUSData, setCovidUSData] = useState([])
     const [lastUpdated, setLastUpdated] = useState('')
+    const [isLoading, setisLoading] = useState(true)
 
-    // useEffect(() => {
-      
-    //   const makeApiCall = async () => {
-    //     const res = await fetch("https://pomber.github.io/covid19/timeseries.json");
-    //     const json = await res.json();
-    //     console.log('Price - json', json);
-        
-    //   };
-    //   makeApiCall();
-    // }, []);
+  
 
     useEffect(() => {
       
       const makeApiCall = async () => {
-        const res = await fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?", {
+        
+        const res = await fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=US", {
           "method": "GET",
           "headers": {
             "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
@@ -32,21 +25,27 @@ export const CovidDataContext = createContext()
           }
         });
         const json = await res.json();
-        setCovidData(json.covid19Stats)
-        setLastUpdated(json.lastChecked)
         
-        
+        console.log('app-json',json)
+        setCovidUSData(json.data.covid19Stats)
+        setLastUpdated(json.data.lastChecked)
+        setisLoading(false)
       };
-      makeApiCall();
-      console.log('LastUpdate', lastUpdated);
-        console.log('Data', covidData);
+      makeApiCall().catch(e=>{console.log('Fetch error:', e.message)});
     }, []);
 
+    console.log('app-data',covidUSData)
+    // console.log('app-res',lastUpdated)
+    if (isLoading){
+      return <div>isLoading</div>
+    }
   return (
     <div className="App">
       <Header />
-      <CovidDataContext.Provider value={covidData}>
-        <Main />
+      <Main />
+      <CovidDataContext.Provider value={covidUSData}>
+        {/* <Main /> */}
+        {!isLoading ? <Main /> : <p className="loading">Is Loading ...</p>}
       </CovidDataContext.Provider>
       <Footer />
     </div>

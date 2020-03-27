@@ -4,6 +4,18 @@ import papaparse from 'papaparse';
 import CSVReader from 'react-csv-reader'
 
 
+  // useEffect(() => {
+      
+    //   const makeApiCall = async () => {
+    //     const res = await fetch("https://pomber.github.io/covid19/timeseries.json");
+    //     const json = await res.json();
+    //     console.log('Price - json', json);
+        
+    //   };
+    //   makeApiCall();
+    // }, []);
+
+
 // const fetchCommissionReport = async (startDate, endDate) => {
 //      const report = await fetch(
 //       `https://reporting.feltapp.com/reports/design-commission-report?start_date=${startDate}&end_date=${endDate}`,
