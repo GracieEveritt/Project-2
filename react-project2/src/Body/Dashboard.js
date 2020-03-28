@@ -8,47 +8,40 @@ function Dashboard(props){
     const covidDataImport = useContext(CovidDataContext)
     // const [covidData, setCovidData] = useState(false)
     
-    // useEffect(() => {
-    //     const updateState = async () => {
-    //         if() covidDataImport === true){
-    //         console.log("dash - CDI true")}
+console.log('Dash - covidData', covidDataImport)
 
-
-    //     }
-    //     // if(typeof covidDataImport === 'undefined'){
-    //     //     console.log('Dash got undefined')
-    //     // } else if(covidDataImport ===null){
-    //     //     console.log("Dash Import null")
-    //     // } else {console.log("Dash got data")}
-    // })
-    
-    // useEffect(() => {
-        
-        // let dataToDisplay =  covidDataImport.map((city =>{
-        //     console.log('data',city)
-        //     return(
-        //         <div className="City">
-        //             <p>{city.province}</p>
-        //         </div>
-        //     )
-        // }))
-    
-
-    // },)
-    
-    console.log('Dash - DataImport',covidDataImport)
-    // console.log('Dash - covidData', covidData)
-    // console.log('Dash - covid', props)
-
-    const handleClick = () => {
-        
-        
-        // let dataToDisplay = covidData.filter({city,index}) => {
-        //     console.log(state)
-        // }
+    const stateConfirmedCases = array => {
+        let sumConfirmedCasesbyState = {}
+        for(let i=0;i<array.length;i++){
+            let state = covidDataImport[i].province
+            if(sumConfirmedCasesbyState[state]){
+                sumConfirmedCasesbyState[state] = sumConfirmedCasesbyState[state] += covidDataImport[i].confirmed
+            }
+            else{
+                sumConfirmedCasesbyState[state]=covidDataImport[i].confirmed
+            }
+        }
+        let sortedConfirmedCasesbyState=[]
+        for(let key in sumConfirmedCasesbyState){
+            sortedConfirmedCasesbyState.push([key,sumConfirmedCasesbyState[key]])
+        }
+        sortedConfirmedCasesbyState.sort(function(a,b){
+            return b[1]-a[1]
+        })
+        return sortedConfirmedCasesbyState
     }
 
-    
+    console.log('dups algo final',stateConfirmedCases(covidDataImport))
+
+    const handleClick = () => {
+        // stateConfirmedCases(covidDataImport)
+        
+      
+    }
+
+    if(!covidDataImport) {
+        return <div>Dashboard</div>
+    }
     
     return(
         <div className="Dashboard">
@@ -65,7 +58,7 @@ function Dashboard(props){
                 <div className="Stat-Box Total-Cases">
                     <p>Total Cases</p>
                     <i onClick={handleClick} className="fas fa-angle-down"></i>
-                    {/* {dataToDisplay} */}
+                    {/* {() => stateConfirmedCases(covidDataImport)} */}
                 </div>
                 <div className="Stat-Box Total-Recoveries">
                     <p>Total Recoveries</p>

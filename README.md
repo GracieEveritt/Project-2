@@ -6,7 +6,7 @@
 -Deployment Link:   
 
 ## Project Description
-Build a website from API using React.js & to have fun. I chose to build an analytics site for Coronavirus because it is a scary reality for us all. After reviewing other developer's approach to present this same data, I think mine will be unique. Currently, no one has done a dashboard for the US. If I have extra time, it would be nice to impelement news as well. 
+Build a website from API using React.js & to have fun. I chose to build an analytics site for Coronavirus because it is a scary reality for us all. After reviewing other developer's approach to present this same data, I think mine will be unique. Currently, no one has done a dashboard for the US. This dashboard If I have extra time, it would be nice to impelement news as well. 
 
 ## API Reference
 - Source 1 - by country: Coronavirus confirmed cases, deaths, and recovered cases and every day since Jan 22, 2020.  
@@ -113,7 +113,10 @@ Wed, Mar 25 | Research API & Return Data | 2 hours | 2 hours| 2 hours
 Thurs, Mar 26 | Final API Research & Ideas | 1 hour | 1 hour | 1 hour
 Thurs, Mar 26 | Update ReadMe | 1 hour | 1 hour | 1 hour
 Thurs, Mar 26 | Wireframes & Architecture | 2 hours | 2 hours | 2 hours
-
+Fri, Mar 27 | isLoading | 1 hour | 1 hour | 1 hour
+Fri, Mar 27 | Building Mobile Dashboard | 8 hours | 2 hours |
+Fri, Mar 27 | Dashboard Build - Data Sort | 2 hours | 2 hours |
+Fri, Mar 27 | Dashboard API inport debug | 3 hours | 3 hours |
 
 
 
