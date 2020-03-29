@@ -21,6 +21,14 @@ Build a website from API using React.js & to have fun. I chose to build an analy
           }
         });
 
+-Source 3: fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particular_country.php?country=USA", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
+		"x-rapidapi-key": "6aebfd9cf1mshf5ff7c3037601f8p1d234bjsndbb38607cd6d"
+	}
+})
+
 - [x] Why this API: it's relevant -- many ways to filter data and visually display into separate components
 - [x] Code Snippet
 
@@ -117,6 +125,7 @@ Fri, Mar 27 | isLoading | 1 hour | 1 hour | 1 hour
 Fri, Mar 27 | Building Mobile Dashboard | 8 hours | 2 hours |
 Fri, Mar 27 | Dashboard Build - Data Sort | 2 hours | 2 hours |
 Fri, Mar 27 | Dashboard API inport debug | 3 hours | 3 hours |
+Sat, Mar 28 | Dashboard Functionality | 4 hours | 4 hours | 4 hours
 
 
 

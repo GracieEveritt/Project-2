@@ -20,23 +20,33 @@
   max-width: 100%;
   margin: 0 auto;
   height: 40px;
+  overflow: hidden;
+  position: fixed;
+  top:0;
+  background-color: #192840;
 }
 .Top-Nav{
   
 }
 .Last-Updated{}
 
+.Main {
+  margin-top: 40px;
+  min-height: 100%;
+  margin-bottom: 30px;
+}
+
 
 
 Button, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
   background-color: #2C3E5A;
 }
-.Stat-Boxes{
+.State-Boxes{
   margin-top: 10px;
   margin-bottom: 10px;
 
 }
-.Stat-Box {
+.State-Box {
   display: flex;
 }
 .Stats {
@@ -48,8 +58,17 @@ Button, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
 .Total-Cases, .Total-Recoveries{
   margin-bottom: 5px;
 }
+.List-Cases{
+  
+  padding-top:20px;
+}
 .Footer{
   display: flex;
+  overflow: hidden;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  /* background-color: #192840; */
 }
 .Footer-Nav ul{
   display: flex;
