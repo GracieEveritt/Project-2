@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react';
 import {CovidDataContext} from '../App'
 import {Link} from 'react-router-dom';
-// import Chart from './Chart'
+import Chart from './Chart'
 import {Bar, Line, Pie} from 'react-chartjs-2'
 
 
@@ -164,8 +164,7 @@ function Dashboard(props){
                 
             </div>
             <div className="Graph">
-                <p>GRAPH</p>
-                {/* <Chart /> */}
+                <Chart totalCases={totalCases} totalDeaths={totalDeaths} totalRecoveries={totalRecoveries} />
             </div>
             <div className="State-Boxes">
                 <div className="State-Box Total-Cases">

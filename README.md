@@ -126,6 +126,7 @@ Fri, Mar 27 | Building Mobile Dashboard | 8 hours | 2 hours |
 Fri, Mar 27 | Dashboard Build - Data Sort | 2 hours | 2 hours |
 Fri, Mar 27 | Dashboard API inport debug | 3 hours | 3 hours |
 Sat, Mar 28 | Dashboard Functionality | 4 hours | 4 hours | 4 hours
+Sun, Mar 29 | Added Chart | 2 hours | 2 hours | 2 hours
 
 
 
