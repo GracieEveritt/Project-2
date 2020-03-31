@@ -1,10 +1,11 @@
-import React, {useState, useEffect, createContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import Header from './Body/Header'
 import Main from './Body/Main'
 import Footer from './Body/Footer'
+import USMap from './Maps/USMap'
 
-export const CovidDataContext = createContext()
+export const CovidDataContext = React.createContext()
   
 function App() {
   const [covidUSData, setCovidUSData] = useState([]);
@@ -24,8 +25,9 @@ function App() {
           }
         }
       );
+      // console.log('res', res)
       const json = await res.json();
-      console.log("app-json", json);
+      // console.log("app-json", json);
      
       
       setCovidUSData(json.data.covid19Stats);
@@ -34,14 +36,11 @@ function App() {
     };
     makeApiCall()
   }, []);
-  console.log("app-data", covidUSData);
-  // console.log('app-res',lastUpdated)
-  // if (isLoading) {
-  //   return <div>isLoading</div>;
-  // }
+  // console.log("app-data", covidUSData);
+
   return (
     <div className="App">
-      <Header />
+      <Header lastUpdated={lastUpdated}/>
       <CovidDataContext.Provider value={covidUSData}>
         {!isLoading ? <Main /> : <p className="loading">Is Loading ...</p>}
       </CovidDataContext.Provider>

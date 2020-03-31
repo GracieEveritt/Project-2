@@ -72,11 +72,11 @@ Build a website from API using React.js & to have fun. I chose to build an analy
 |  |  | Architecture 
 |  |  | Built using Create-React-App  
 |  |  | Return Data from API  
-5+ Components| |  
+| | 5+ Components 
 React Router (2+ routes) | |  
-Mobile First | |  
+ | Mobile First |  
 Responsive Design | |  
-React Hooks | |  
+ | React Hooks |  
 Code Clean-Up | |  
 Deployed via Netlify | |  
 
@@ -84,8 +84,8 @@ Deployed via Netlify | |
 #### Post-MVP Requirements
 **To DO** | **In Progress** | **Done**
 ------------|-------------------|-----------  
-Home - Overall (total, recovery, death) - leaders
-Last Updated - UTC to EST | |  
+| Home - Overall (total, recovery, death) - leaders |
+ | Last Updated - UTC to EST |  
 Interactive Map - World (hot zone colors) - click to indiv country | |  
 Interactive Map - USA (hot zone colors) - click to indiv state | |  
 Interactive Map 2nd View: Most Progressive Death Regions - World | |  
@@ -127,6 +127,7 @@ Fri, Mar 27 | Dashboard Build - Data Sort | 2 hours | 2 hours |
 Fri, Mar 27 | Dashboard API inport debug | 3 hours | 3 hours |
 Sat, Mar 28 | Dashboard Functionality | 4 hours | 4 hours | 4 hours
 Sun, Mar 29 | Added Chart | 2 hours | 2 hours | 2 hours
+Mon, Mar 30 | Incorporated Map | 7 hours | 7 hours | 7 hours
 
 
 
@@ -134,6 +135,7 @@ Sun, Mar 29 | Added Chart | 2 hours | 2 hours | 2 hours
 1. US Map: https://www.npmjs.com/package/react-usa-map
 2. Map Zoom-Pan: https://www.react-simple-maps.io/examples/zoom-pan/
 3. World Map: https://www.npmjs.com/package/react-world-map
+4. ChartJS: https://www.chartjs.org/docs/latest/charts/bar.html#general
 
 
 ## Code Snippet

@@ -1,22 +1,20 @@
-import React, {Component} from 'react';
-import {HorizontalBar} from 'react-chartjs-2'
+import React from 'react';
+import {HorizontalBar,defaults } from 'react-chartjs-2'
 
 
 
 
 
 function Chart(props) {
-    console.log('chart props', props)
-    let totalCases = props.totalCases
-    let totalRecoveries = props.totalRecoveries
-    let totalDeaths = props.totalDeaths
     
-
+    // console.log('chart defaults', defaults.global)
+    // console.log('Chart props',props)
     const chartData = {
         labels: ['Confirmed', 'Recovered', "Deaths"], //x axis
         datasets: [{
-            labels: 'Population',
-            data: [{totalCases},{totalRecoveries},{totalDeaths}], //y-axis
+            // labels: 'Population',
+            data: [props.totalCases,props.totalRecoveries,props.totalDeaths], //y-axis
+           
             backgroundColor: ['#37A9E9', '#7ED72D', '#E969F1'],
             hoverBackgroundColor: ['#892F99','#892F99','#892F99' ]
         }]
@@ -27,7 +25,7 @@ function Chart(props) {
         <HorizontalBar 
             data={chartData}
             // width={width}
-            // height="100"
+            height={150}
             options={{
                 mainAspectRation: false,
                 title: {
@@ -38,6 +36,7 @@ function Chart(props) {
                 },
                 scales:{
                     yAxes: [{
+                        
                         ticks: {
                             fontColor: "white",
                             fontSize: 12,
@@ -47,10 +46,12 @@ function Chart(props) {
                     }],
                     xAxes: [{
                         ticks: {
+                            offset: false,
                             fontColor: "white",
                             fontSize: 10,
-                            setpSize: 500,
-                            beginAtZero: true
+                            // setpSize: 500,
+                            beginAtZero: false
+                            
                         }
                     }]
                 },

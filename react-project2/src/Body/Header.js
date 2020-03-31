@@ -4,7 +4,12 @@ import '../App.css';
 
 
 
-function Header() {
+function Header(props) {
+  // let lastUpdatedInput = new Date(props.lastUpdated)
+  // let test = new Intl.DateTimeFormat('en-US').format(props.lastUpdated)
+  // let lastUpdated = lastUpdatedInput.toString()
+  // console.log('header-lastupdatedTest',test)
+  // console.log('header-lastupdatedINput',lastUpdatedInput)
   return (
     <div className="Header"> 
      <nav className="Top-Nav">
@@ -17,7 +22,7 @@ function Header() {
           </ul>
       </nav>
       <div className="Last-Updated">
-        <h6>Last Updated: FIX THIS</h6>
+        <h6>Last Updated: FIX</h6>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@
   height: 100%;
 }
 .Header {
-  display: flex;
+  /* display: flex; */
   width: 425px;
   /* justify-content: space-between; */
   align-items: center;
@@ -28,7 +28,9 @@
 .Top-Nav{
   
 }
-.Last-Updated{}
+.Last-Updated{
+  text-align: right;
+}
 
 .Main {
   margin-top: 40px;
@@ -73,4 +75,21 @@ Button, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
 .Footer-Nav ul{
   display: flex;
   justify-content: space-around;
+}
+
+.us-state-map{
+  width: 90%;
+  height: auto;
+  
+}
+title{
+  color: white;
+}
+
+path {
+  pointer-events: all;
+}
+path:hover {
+  opacity: 0.50;
+  cursor: pointer;
 }
