@@ -4,17 +4,16 @@ import {CovidDataContext} from '../App'
 import stateIndex from './stateIndex'
 
 
-
 function USMap () {
-    const covidDataImport = useContext(CovidDataContext)
-    // console.log('USMap-covidDataImport', covidDataImport)
-   const [stateSelected, setStateSelected]= useState("")
-   const [summaryMapData, setSummaryMapData] = useState("")
+   const covidDataImport = useContext(CovidDataContext)
+   
+   const [stateSelected, setStateSelected]= useState("CO")
+   const [summaryMapData, setSummaryMapData] = useState([])
    const [viewSelected, setViewSelected] = useState("confirmed")
 
 //This function creates a new covidData array, that bridges API data to Map settings and incorporates color to provide visualization
-useEffect(() => {  
-    const summaryMapData = (stateIndex, covidData) =>{
+useEffect(() => {
+    const functionMapData = (stateIndex, covidData) =>{
         let summaryByState = []
         stateIndex.map((state, index) =>{
             let totalConfirmed = 0
@@ -30,20 +29,33 @@ useEffect(() => {
             };
             
             state.stateAbbrev = Object.keys(state).find(key => state[key] === state[key])
+            state.stateName = state[state.stateAbbrev]
             state.confirmed = totalConfirmed
             
-            switch(!totalConfirmed){
-            case (totalConfirmed<100):
-                state.confirmedStatus = "Low";
-                state.confirmedFill = "#f4c6c7";
+            switch(true){
+            case (totalConfirmed<200):
+                state.confirmedStatus = "Very Low - Less than 200 Cases";
+                state.confirmedFill = "#FFD1DC";
                 break;
+            case (totalConfirmed<1000):
+                    state.confirmedStatus = "Low - Less than 1,000 Cases";
+                    state.confirmedFill = "#FFB7C5";
+                    break;
+            case (totalConfirmed<5000):
+                        state.confirmedStatus = "More than 5,000 Cases";
+                        state.confirmedFill = "#FC8EAC";
+                        break;
+            case (totalConfirmed<5000):
+                    state.confirmedStatus = "Growing - More than 10,000 Cases";
+                    state.confirmedFill = "#E75480";
+                    break;
             case (totalConfirmed<=25000):
-                state.confirmedStatus = "Alarming";
-                state.confirmedFill = "#f98488";
+                state.confirmedStatus = "Hot Spot! More than 10,000 Cases ";
+                state.confirmedFill = "#DE3163";
                 break;
             case (totalConfirmed>25000):
-                state.confirmedStatus = "Hot Spot!";
-                state.confirmedFill = "#ff0008";
+                state.confirmedStatus = "TOO HOT! More than 25,000 Cases";
+                state.confirmedFill = "#B22222";
                 break;
             default:
                 state.confirmedFill = "Unknown";
@@ -53,14 +65,17 @@ useEffect(() => {
             
             switch(!totalRecovered){
             case (((totalRecovered/totalConfirmed)*100)<0.05):
+                state.recoveryRate = ((totalRecovered/totalConfirmed)*100).toFixed(2)
                 state.recoveredStatus = "Too Low";
                 state.recoveredFill = "#bbf7b7";
                 break;
             case (((totalRecovered/totalConfirmed)*100)<=0.15):
-                state.recoveredStatus = "Average";
+                state.recoveryRate = ((totalRecovered/totalConfirmed)*100).toFixed(2)    
+            state.recoveredStatus = "Average";
                 state.recoveredFill = "#89f981";
                 break;
             case (((totalRecovered/totalConfirmed)*100)>0.15):
+                state.recoveryRate = ((totalRecovered/totalConfirmed)*100).toFixed(2)
                 state.recoveredStatus = "Above Average";
                 state.recoveredFill = "#15fc05";
                 break;
@@ -72,14 +87,17 @@ useEffect(() => {
         
             switch(!totalDeaths){
             case (((totalDeaths/totalConfirmed)*100)<0.02):
+                state.deathRate = ((totalDeaths/totalConfirmed)*100).toFixed(2)
                 state.deathStatus = "Low";
                 state.deathFill = "#a7a4f9";
                 break;
             case (((totalDeaths/totalConfirmed)*100)<=0.05):
+                state.deathRate = ((totalDeaths/totalConfirmed)*100).toFixed(2)
                 state.deathStatus = "Average";
                 state.deathFill = "#6762fc";
                 break;
             case (((totalDeaths/totalConfirmed)*100)>0.05):
+                state.deathRate = ((totalDeaths/totalConfirmed)*100).toFixed(2)
                 state.deathStatus = "High!";
                 state.deathFill = "#ad05fc";
                 break;
@@ -92,9 +110,21 @@ useEffect(() => {
             setSummaryMapData(summaryByState)
             // return summaryByState
     }
-    summaryMapData(stateIndex, covidDataImport)
-  }, []);
-console.log('summaryData:',summaryMapData)
+    functionMapData(stateIndex,covidDataImport)
+}, []);
+
+
+
+
+const stateToDisplay = summaryMapData.filter((state, index) =>{
+    // console.log('inside stateTD', state, state.stateAbbrev)
+    return state.stateAbbrev === stateSelected;
+    //
+})
+    console.log('stateToDisplay', stateToDisplay, stateSelected)
+    
+
+
 
 //Don't Think I need this function confirmedByState
     const confirmedByState = (array) => {
@@ -123,17 +153,11 @@ console.log('summaryData:',summaryMapData)
 
    }
 
-   const setMapColor = (viewSelected => {
-        return (
-<></>
-        )
 
-   })
-
-    console.log('stateIndex:', stateIndex.stateSelected)
+    // console.log('stateIndex:', stateIndex.stateSelected)
     let mapHandler = (event) => {
         console.log('mapHandler-event',event.target.dataset.name)
-        let stateClicked = stateIndex[event.target.dataset.name]
+        let stateClicked = event.target.dataset.name
         console.log('stateClicked with key',stateClicked)
         // console.log('mapHandler-event.name',setStateSelected())
         // alert(event.target.dataset.name)
@@ -183,77 +207,32 @@ console.log('summaryData:',summaryMapData)
         
         
     
-        // return(
-        //     <tbody>
-        //     <tr>
-        //        <th></th>
-        //        <th>Total</th>
-        //        <th>Rate</th>
-        //        <th>Status</th>
-        //        <th>% of US Total</th>
-        //    </tr>
-        //    <tr>
-        //        <td>Cases:</td>
-        //        <td>confirmedCases[event.target.dataset.name]</td>
-        //        <td>2.0%</td>
-        //        <td>2.0%</td>
-        //        <td>2.0%</td>
-        //    </tr>
-        //    <tr>
-        //        <td>Recoveries:</td>
-        //        <td>500</td>
-        //        <td>1.0%</td>
-        //        <td>2.0%</td>
-        //        <td>2.0%</td>
-        //    </tr>
-        //    <tr>
-        //        <td>Deaths:</td>
-        //        <td>3000</td>
-        //        <td>0.01%</td>
-        //        <td>2.0%</td>
-        //        <td>2.0%</td>
-        //    </tr>
-        //    </tbody>
-        // )
+        
   
     // console.log('stateSelected after Click',stateSelected)
 // console.log('test', stateIndex[0])
-console.log('StateSelected',stateSelected)
-    const statesCustomConfig = (summaryData, viewSelected) => {
-        console.log('insideCustom - viewSelected', viewSelected)
-        console.log('insideCustom- summaryData', summaryData)
-        // for (i=0; i<summaryData.length; i++){
-        //     console.log(summaryData[i])
-        //     let color = `${viewSelected}Fill`
-        //     return({
-        //         hi : "hi"
-        //         // summaryData[i].stateAbbrev : { fill : summaryData[i].color}            
-        // })
-    } 
-    statesCustomConfig(summaryMapData, viewSelected)     
-       
-        // return({
-        //     "TX":{
-        //         fill: "#7b60e5",
-        //         clickHandler: (event) => console.log('Custom handler for TX',event.target.dataset)
-        //     },
-        //     "AZ":{
-        //         fill: "#0d05fc"
-        //     },
-        //     "OK":{
-        //         fill: "#a48ff7"
-        //     },
-        //     "NM":{
-        //         fill: "#6762fc"
-        //     },
-        //     "CO":{
-        //         fill: "#a7a4f9"
-        //     }
 
-        // })
-    
+
+
+console.log('my summaryData', summaryMapData)
+
+ //this function is how the Map wanted me to communicate this (similar to your Map)
+
+    const statesCustomConfig = () =>{
+        let obj = {}
+        summaryMapData.map((state) => {
+
+            let stateData = {fill : state[`${viewSelected}Fill`]} 
+            obj[state.stateAbbrev] = stateData
+         })
+         console.log('obj', obj)
+        return obj
+    }
+   
+    if(summaryMapData.length<1){return(<div>Is Loading....</div>)}
+
     return (
-      
+        
        <div className="USMap">
            <div className="Map-Buttons">
                <button className="Map-Cases-Button">Cases</button>
@@ -261,19 +240,47 @@ console.log('StateSelected',stateSelected)
                <button className="Map-Deaths-Button">Deaths</button>
            </div>
            <USAMap customize={statesCustomConfig()} onClick={mapHandler} />
-           <div className="Map-State-Box">
-               <h1>State Name</h1>
-               <div>Status: Hot Zone</div>
-               <table>
-                <tbody>
-                    <tr>
-                        <th>{stateSelected}</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
+           
+           <div className="Map-State-Box"> 
+                <h1>State: {stateToDisplay[0].stateName}</h1>
+                <div>Status: {stateToDisplay[0][`${viewSelected}Status`]}</div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th>Total</th>
+                            <th>Rate</th>
+                            <th>Status</th>
+                            <th>% of US Total</th>
+                            <th>US Ranking</th>
+                        </tr>
+                        <tr>
+                            <td>Cases:</td>
+                            <td>{stateToDisplay[0].confirmed}</td>
+                            <td></td>
+                            <td>{stateToDisplay[0].confirmedStatus}</td>
+                            <td>2.0%</td>
+                            <td>#5</td>
+                        </tr>
+                        <tr>
+                            <td>Recoveries:</td>
+                            <td>{stateToDisplay[0].recovered}</td>
+                            <td>{stateToDisplay[0].recoveryRate}%</td>
+                            <td>{stateToDisplay[0].recoveredStatus}</td>
+                            <td>2.0%</td>
+                            <td>#4</td>
+                        </tr>
+                        <tr>
+                            <td>Deaths:</td>
+                            <td>{stateToDisplay[0].deaths}</td>
+                            <td>{stateToDisplay[0].deathRate}%</td>
+                            <td>{stateToDisplay[0].deathStatus}</td>
+                            <td>2.0%</td>
+                            <td>#3</td>
+                        </tr>
                     </tbody>
-               </table>
-           </div>
+                </table>
+            </div>
 
        </div>
       
