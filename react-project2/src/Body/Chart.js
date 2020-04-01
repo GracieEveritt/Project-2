@@ -10,7 +10,7 @@ function Chart(props) {
     // console.log('chart defaults', defaults.global)
     // console.log('Chart props',props)
     const chartData = {
-        labels: ['Confirmed', 'Recovered', "Deaths"], //x axis
+        labels: ['Cases', 'Rcvrd', "Deaths"], //x axis
         datasets: [{
             // labels: 'Population',
             data: [props.totalCases,props.totalRecoveries,props.totalDeaths], //y-axis

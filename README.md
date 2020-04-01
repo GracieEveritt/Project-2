@@ -128,6 +128,7 @@ Fri, Mar 27 | Dashboard API inport debug | 3 hours | 3 hours |
 Sat, Mar 28 | Dashboard Functionality | 4 hours | 4 hours | 4 hours
 Sun, Mar 29 | Added Chart | 2 hours | 2 hours | 2 hours
 Mon, Mar 30 | Incorporated Map | 7 hours | 7 hours | 7 hours
+Tue, Mar 31 | Refactor Code & Functionality | 8 hours | 8 hours | 8 hours
 
 
 
@@ -136,6 +137,7 @@ Mon, Mar 30 | Incorporated Map | 7 hours | 7 hours | 7 hours
 2. Map Zoom-Pan: https://www.react-simple-maps.io/examples/zoom-pan/
 3. World Map: https://www.npmjs.com/package/react-world-map
 4. ChartJS: https://www.chartjs.org/docs/latest/charts/bar.html#general
+5. Underscore: https://underscorejs.org/
 
 
 ## Code Snippet

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {CovidDataContext} from '../App'
 // import {Link} from 'react-router-dom';
 import Chart from './Chart'
@@ -8,40 +8,34 @@ import Chart from './Chart'
 function Dashboard(props){
     const covidDataImport = useContext(CovidDataContext)
     
-    
+    const [totalCases, setTotalCases] = useState(0)
+    const [totalRecoveries, setTotalRecoveries] = useState(0)
+    const [totalDeaths, setTotalDeaths] = useState(0)
     const [clickOpen, setClickOpen] = useState(false)
     const [tableView, setTableView] = useState([])
     // console.log('Dash - covidData', covidDataImport)
 
-    const totalConfirmed = (array) => {
-        let totalCases = 0
-        for(let i=0;i<array.length;i++){
-            totalCases += covidDataImport[i].confirmed
+    useEffect(() => {
+        const setTotals = (array) => {
+            let totalCases = 0
+            let totalRecoveries = 0
+            let totalDeaths = 0
+            for(let i=0;i<array.length;i++){
+                totalCases += covidDataImport[i].confirmed
+                totalRecoveries += covidDataImport[i].recovered
+                totalDeaths += covidDataImport[i].deaths
+            }
+            setTotalCases(totalCases)
+            setTotalRecoveries(totalRecoveries)
+            setTotalDeaths(totalDeaths)
         }
-       return (totalCases)
-    }
-    const totalRecovered = (array) => {
-        let totalRecoveries = 0
-        for(let i=0;i<array.length;i++){
-            totalRecoveries += covidDataImport[i].recovered
-        }
-       return (totalRecoveries)
-    }
-    const totalDead = (array) => {
-        let totalDeaths = 0
-        for(let i=0;i<array.length;i++){
-            totalDeaths += covidDataImport[i].deaths
-        }
-       return (totalDeaths)
-    }
-    let totalCases = totalConfirmed(covidDataImport)
-    let totalRecoveries= totalRecovered(covidDataImport)
+        setTotals(covidDataImport)
+    }, []);
     let totalRecoveryPercent = ((totalRecoveries/totalCases)*100).toFixed(2)
-    let totalDeaths = totalDead(covidDataImport)
     let totalDeathsPercent = ((totalDeaths/totalCases)*100).toFixed(2)
-    let totalCasesComma = (totalConfirmed(covidDataImport)).toLocaleString({minimumFractionDigits:0})
-    let totalRecoveriesComma = (totalRecovered(covidDataImport)).toLocaleString({minimumFractionDigits:0})
-    let totalDeathsComma = (totalDead(covidDataImport)).toLocaleString({minimumFractionDigits:0})
+    let totalCasesComma = (totalCases).toLocaleString({minimumFractionDigits:0})
+    let totalRecoveriesComma = (totalRecoveries).toLocaleString({minimumFractionDigits:0})
+    let totalDeathsComma = (totalDeaths).toLocaleString({minimumFractionDigits:0})
 
     
     const handleClick = (caseType) => {
@@ -104,7 +98,7 @@ function Dashboard(props){
         return (
             <div className="State-Boxes">
                     <div className="State-Box Total-Cases" style={{position: "fixed", width: "100%"}}>
-                        <p>Total Cases: &nbsp; {totalConfirmed(covidDataImport)}</p>
+                        <p>Total Cases: &nbsp; {totalCases}</p>
                         <i onClick={handleClickClose} className="fas fa-angle-up"></i>
                     </div>
                     <div className="List-Cases" >
