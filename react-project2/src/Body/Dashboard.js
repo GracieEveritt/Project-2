@@ -24,16 +24,16 @@ function Dashboard(props){
             let totalRecoveries = 0
             let totalDeaths = 0
             for(let i=0;i<array.length;i++){
-                totalCases += covidDataImport[i].confirmed
-                totalRecoveries += covidDataImport[i].recovered
-                totalDeaths += covidDataImport[i].deaths
+                totalCases += array[i].confirmed
+                totalRecoveries += array[i].recovered
+                totalDeaths += array[i].deaths
             }
             setTotalCases(totalCases)
             setTotalRecoveries(totalRecoveries)
             setTotalDeaths(totalDeaths)
         }
         setTotals(covidDataImport)
-    }, []);
+    }, [covidDataImport]);
 
     //The following formats values
     let totalRecoveryPercent = ((totalRecoveries/totalCases)*100).toFixed(2)
@@ -99,7 +99,7 @@ function Dashboard(props){
 
    //Alternative Dashboard Views
     if(!covidDataImport) {
-        return <div>Dashboard</div>
+        return <div >Dashboard</div>
     } else if(clickOpen){
         let totalNumber = 0
         if(viewRequest === "Confirmed"){
@@ -112,7 +112,7 @@ function Dashboard(props){
 
         return (
             <div className="State-Boxes">
-                <div className="State-Box Total-Cases" style={{position: "fixed", width: "100%"}}>
+                <div className="State-Box Total-Cases" style={{position: "fixed", width: "93%"}}>
                     <p>Total {viewRequest}: &nbsp; {totalNumber} </p>
                     <i onClick={handleUpArrowClick} className="fas fa-angle-up"></i>
                 </div>
@@ -133,11 +133,11 @@ function Dashboard(props){
     return(
         <div className="Dashboard">
             <div className="Stats">
-                <div className="Top-Dash-Spacer" />
+                {/* <div className="Top-Dash-Spacer" /> */}
                 <p>Current US Covid Stats</p>
                 <div className="Stat-Spacer" />
                 <div className="Graph-Button-Container">
-                    <button className="Graph-Buttons">US</button>
+                    <button className="Graph-Buttons Graph-Button-US">US</button>
                     <button className="Graph-Buttons">Global</button>
                 </div>
                 
@@ -147,16 +147,16 @@ function Dashboard(props){
             </div>
             <div className="State-Boxes">
                 <div className="State-Box Total-Cases">
-                    <p>Total Cases: &nbsp; {totalCasesComma}</p>
+                    <p>Total Cases: &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{totalCasesComma}</p>
                     <i onClick={()=>handleDownArrowClick('confirmed')} className="fas fa-angle-down"></i>
                         
                 </div>
                 <div className="State-Box Total-Recoveries">
-                    <p>Total Recoveries: &nbsp; {totalRecoveriesComma} &nbsp; {totalRecoveryPercent}%</p>
+                    <p>Total Recoveries: &nbsp; {totalRecoveriesComma} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {totalRecoveryPercent}%</p>
                     <i onClick={()=>handleDownArrowClick('recovered')} className="fas fa-angle-down"></i>
                 </div>
                 <div className="State-Box Total-Deaths">
-                    <p>Total Deaths: &nbsp; {totalDeathsComma} &nbsp; {totalDeathsPercent}%</p>
+                    <p>Total Deaths: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {totalDeathsComma} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {totalDeathsPercent}%</p>
                     <i onClick={()=>handleDownArrowClick('deaths')} className="fas fa-angle-down"></i>
                 </div>
             </div>

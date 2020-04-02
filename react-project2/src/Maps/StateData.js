@@ -17,7 +17,7 @@ const functionStateData = (stateIndex, covidData) =>{
         };
 
         //The following sets object propeties and values for relevant data
-        state.stateAbbrev = Object.keys(state).find(key => state[key] === state[key])
+        state.stateAbbrev = Object.keys(state).find(key => state[key] )
         state.stateName = state[state.stateAbbrev]
         state.confirmed = totalConfirmed.toLocaleString({minimumFractionDigits:0})
         
@@ -35,7 +35,7 @@ const functionStateData = (stateIndex, covidData) =>{
                     state.confirmedStatus = "Growing: More than 5,000 Cases";
                     state.confirmedFill = "#FC8EAC";
                     break;
-        case (totalConfirmed<5000):
+        case (totalConfirmed<10000):
                 state.confirmedStatus = "Thriving - More than 10,000 Cases";
                 state.confirmedFill = "#E75480";
                 break;
@@ -95,7 +95,7 @@ const functionStateData = (stateIndex, covidData) =>{
             state.deathFill = "Unknown";
         }
         })
-        summaryByState.push(state)
+        return summaryByState.push(state)
     })
     //Here, I update the state variable - so that this new array is available for other functions
     return summaryByState

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+
 import '../App.css';
 
 
@@ -22,7 +22,7 @@ function Header(props) {
     <div className="Header"> 
      <nav className="Top-Nav">
 
-          <ul className="Hamburger"><Link to="/"><i onClick={props.drawerClickHandler} id="Hamburger" className="fas fa-bars"></i></Link>
+          <ul className="Hamburger"><i onClick={props.drawerClickHandler} id="Hamburger" className="fas fa-bars"></i>
 
           </ul>
       </nav>

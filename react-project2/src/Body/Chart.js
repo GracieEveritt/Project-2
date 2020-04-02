@@ -1,16 +1,17 @@
 import React from 'react';
-import {HorizontalBar,defaults } from 'react-chartjs-2'
+import {HorizontalBar, defaults} from 'react-chartjs-2'
 
 
-
+defaults.global.defaultFontFamily = "Montserrat"
+defaults.global.defaultFontColor = "white"
+defaults.global.defaultFontWeight = "500"
 
 
 function Chart(props) {
     
-    // console.log('chart defaults', defaults.global)
-    // console.log('Chart props',props)
+
     const chartData = {
-        labels: ['Cases', 'Rcvrd', "Deaths"], //x axis
+        labels: ['Cases', 'Recvrd', "Deaths"], //x axis
         datasets: [{
             // labels: 'Population',
             data: [props.totalCases,props.totalRecoveries,props.totalDeaths], //y-axis
@@ -28,6 +29,12 @@ function Chart(props) {
             height={150}
             options={{
                 mainAspectRation: false,
+                legend:{
+                    labels: {
+                        fontColor: "white",
+                        
+                    }
+                },
                 // title: {
                 //     display: true,
                 //     text: "Current US Covid Statistics",
@@ -40,6 +47,7 @@ function Chart(props) {
                         ticks: {
                             fontColor: "white",
                             fontSize: 12,
+                            fontweight: "500"
                             // setpSize: 500,
                             // beginAtZero: true
                         }
@@ -49,8 +57,10 @@ function Chart(props) {
                             offset: false,
                             fontColor: "white",
                             fontSize: 10,
+                            fontweight: "500",
                             // setpSize: 500,
-                            beginAtZero: false
+                            beginAtZero: false,
+                           
                             
                         }
                     }]

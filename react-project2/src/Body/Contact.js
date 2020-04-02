@@ -10,8 +10,7 @@ function Contact() {
            <section id="about_href" className="container about_me">
                 <h3 className="about_me_h3">About Me</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, voluptate? Consequatur distinctio ut
-                    adipisci aperiam hic excepturi qui voluptatibus, pariatur voluptatum labore debitis architecto at veniam
-                    nisi quod. Quaerat, perspiciatis!</p>
+                    adipisci aperiam hic excepturi qui voluptatibus!</p>
             </section>
         
             <section id="contact_href" className="container contact">

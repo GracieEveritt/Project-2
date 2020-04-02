@@ -17,8 +17,8 @@ function USMap () {
         console.log('summaryMap before' )
         setSummaryMapData(summaryByState)
         console.log('summaryMap after' )
-    }, []);
-
+    }, [covidDataImport]);
+// console.log('summary', summaryByState)
     //This function returns which State user clicked on the Map 
     let mapHandler = (event) => {
         let stateClicked = event.target.dataset.name
@@ -36,6 +36,7 @@ function USMap () {
         summaryMapData.map((state) => {
             let stateData = {fill : state[`${viewSelected}Fill`]} 
             obj[state.stateAbbrev] = stateData
+            return obj
         })
         return obj
     }

@@ -6,7 +6,11 @@
   padding: 0;
   
 }
-html {
+
+html{
+  height: 100%;
+}
+#root {
   height: 100%;
 }
 
@@ -17,94 +21,209 @@ body {
   height: 100%;
 
 }
-.App{
+.App, .Wrapper{
   min-width: 320px;
   background-color: #192840;
-  height: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.Loading{
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  padding-top: 150px;
+
+}
+
+.Wrapper{
+  /* padding-top: 60px; */
+  /* padding-bottom: 2.5rem; */
 }
 .Header {
   align-items: center;
   width: 100%;
   margin: 0 auto;
   height: 30px;
-  /* overflow: hidden; */
-  /* position: fixed;   */
-  /* top:0; */
+  /* position: fixed; */
+  top: 0;
+  overflow: hidden;
   background-color: #192840;
+  padding-bottom: 80px;
 }
 
+#Hamburger {
+  font-size: 1.5rem;
+}
 .Hamburger {
   padding: 15px 0 0 15px;
 }
 .Top-Nav{
-  height: 100%;
+  
 }
 
 .Last-Updated{
   text-align: right;
   background-color: #192840;
   padding-right: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
   /* padding-bottom:30px; */
 }
 .Last-Updated h6{
-   font-weight: 550;
+  font-family: Montserrat;
+  font-weight: 600;
+  color: white;
+  font-size: .75rem;
   
 }
 
 .Main {
-  margin-top: 40px;
-  min-height: 100%;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  
+  /* min-height: 100%;
+  
+}
+
+.Dashboard{
+  margin: 0 7.5px 0 7.5px;
 }
 
 .Top-Dash-Spacer{
   /* height: 40px;
   background-color: #192840; */
 }
+
+
 .Stats {
  
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   
-  /* padding-top: 30px; */
+  padding-top: 20px;
 }
 
 .Stats p{
   font-size: .75rem;
-  font-weight: bold;
+  font-family: Montserrat;
+  font-weight: 600;
+  padding-left: 10px;
+
 }
 
-.Stats, .Graph-Buttons, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
+.Stats, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
   background-color: #2C3E5A;
 }
+
+canvas{
+  width: 100%;
+}
+
+
+.Graph-Button-Container{
+  display: flex;
+  width: 125px;
+  justify-content: space-between;
+  padding-right: 10px;
+  
+  
+}
+
+.Graph-Buttons{
+  width: 80px;
+  background-color: #192840;
+  border: none;
+  padding: 4px 0;
+  font-family: Montserrat;
+  font-weight: 500;
+}
+
+.Graph-Button-US{
+  border-right: 1px solid rgba(255,255,255,.5);
+}
+
+.Graph {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
 .State-Boxes{
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 40px 10px 10px 10px;
+
+  display: flex;
+  /* padding: 20px 0; */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 13rem;
+  
 
 }
 .State-Box {
+  width: 100%;
+  flex-grow: 1;
   display: flex;
+  justify-content: space-between;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: .9rem;
+  padding: 3.5px;
+  /* margin-bottom: 30px; */
+  height: 3rem;
+  align-items: center;
+  box-shadow: 1px 1px 1px 3px rgb(141, 140, 140);
+}
+
+.State-Box p{
+  padding-left: 8px;
 }
 
 .Total-Cases, .Total-Recoveries{
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+.State-Box i {
+  padding-right: 10px;
 }
 .List-Cases{
+  padding-top:24px;
+}
+
+.List-Cases tr {
+  border: 1px solid white;
+}
+.List-Cases th {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: 2px 5px;
   
-  padding-top:20px;
 }
 .Footer{
+  position: absolute;
+  bottom: 0;
   display: flex;
   overflow: hidden;
-  position: fixed;
-  bottom:0;
+  align-items: center;
+  justify-content: space-around;
   width: 100%;
   /* background-color: #192840; */
+  height: 3.3rem;
+}
+.Footer.Nav{
+
 }
 .Footer-Nav ul{
   display: flex;
   justify-content: space-around;
+  width: 300px;
+}
+.Footer-Nav ul li{
+  /* display: flex;
+  justify-content: space-around; */
+  list-style-type: none;
+}
+.Footer-Nav i {
+  font-size: 1.5rem;
 }
 
 .us-state-map{
@@ -124,8 +243,29 @@ path:hover {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
- /* //this may be wrong */
+@media(min-width: 375px){
+  .State-Boxes {
+    margin: 25px 10px 10px 10px;
+  }
+}
 
+@media(min-width: 425px){
+  .Header {
+    height: 20px;
+  }
+  .Last-Updated {
+    padding-top: 5px;
+  }
+  .Main {
+    margin-top: 5px
+  }
+
+  .Graph-Button-Container{
+    width: 175px;
+    padding-right: 15px;
+    
+    
+  }
+  
 
 }
