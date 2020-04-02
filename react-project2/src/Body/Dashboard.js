@@ -13,8 +13,9 @@ function Dashboard(props){
     const [totalDeaths, setTotalDeaths] = useState(0)
     const [clickOpen, setClickOpen] = useState(false)
     const [tableView, setTableView] = useState([])
-    // console.log('Dash - covidData', covidDataImport)
-
+    const [viewRequest, setViewRequest] = useState("")
+  
+    //This function reduces API objects down to overall USA totals
     useEffect(() => {
         const setTotals = (array) => {
             let totalCases = 0
@@ -31,79 +32,98 @@ function Dashboard(props){
         }
         setTotals(covidDataImport)
     }, []);
+
+    //The following formats values
     let totalRecoveryPercent = ((totalRecoveries/totalCases)*100).toFixed(2)
     let totalDeathsPercent = ((totalDeaths/totalCases)*100).toFixed(2)
     let totalCasesComma = (totalCases).toLocaleString({minimumFractionDigits:0})
     let totalRecoveriesComma = (totalRecoveries).toLocaleString({minimumFractionDigits:0})
     let totalDeathsComma = (totalDeaths).toLocaleString({minimumFractionDigits:0})
-
     
-    const handleClick = (caseType) => {
-        
-        console.log('clicked!', caseType)
+
+    //These functions dictate what happens when user clicks up/down arrow for more information
+    const handleDownArrowClick = (totalType) => {
         setClickOpen(true)
-        let newTableView = stateConfirmedCases(covidDataImport,caseType)
-        console.log('handleClick-newTV', newTableView)
-        setTableView(newTableView)
+        sortedStates(covidDataImport,totalType)
+        let viewRequsted = totalType.charAt(0).toUpperCase()+totalType.slice(1)
+        setViewRequest(viewRequsted)
     }
-    const handleClickClose = () => {
-        console.log('clicked close!')
+    console.log('viewRequest', viewRequest)
+    const handleUpArrowClick = () => {
         setClickOpen(false)
-        // stateConfirmedCases(covidDataImport)
     }
 
-    
-    const stateConfirmedCases = (array, caseType) => {
-        let sumConfirmedCasesbyState = {}
-        console.log('insideFunction', caseType)
+    //This function filters by paramater totalType, reduces API objects by State, sorts and calculates analytics
+    const sortedStates = (array, totalType) => {
+        let stateAggregate = {}
         for(let i=0;i<array.length;i++){
             let state = covidDataImport[i].province
-            if(sumConfirmedCasesbyState[state]){
-                sumConfirmedCasesbyState[state] = sumConfirmedCasesbyState[state] += covidDataImport[i][caseType]
+            if(stateAggregate[state]){
+                stateAggregate[state] = stateAggregate[state] += covidDataImport[i][totalType]
             }
             else{
-                sumConfirmedCasesbyState[state]=covidDataImport[i][caseType]
+                stateAggregate[state]=covidDataImport[i][totalType]
             }
         }
-        console.log('sumConfirmedByState',sumConfirmedCasesbyState )
-        let sortedConfirmedCasesbyState=[]
-        for(let key in sumConfirmedCasesbyState){
-            sortedConfirmedCasesbyState.push([key,sumConfirmedCasesbyState[key]])
+        let sortedStates=[]
+        for(let key in stateAggregate){
+            sortedStates.push([key,stateAggregate[key]])
         }
-        sortedConfirmedCasesbyState.sort(function(a,b){
+        sortedStates.sort(function(a,b){
             return b[1]-a[1]
         })
-        console.log("app", sortedConfirmedCasesbyState)
-        let newTableView = sortedConfirmedCasesbyState.map((state, index) => {
-            // console.log('state',state)
+        console.log('sorted', sortedStates)
+        let totalNumber = 0
+        console.log('viewRequest',viewRequest)
+        if(totalType === "confirmed"){
+            totalNumber+=totalCases
+        }else if(totalType === "recovered"){
+            totalNumber+=totalRecoveries
+        }else if(totalType === "deaths"){
+            totalNumber+=totalDeaths
+        }
+        console.log('totalNumber',totalNumber)
+        let newTableView = sortedStates.map((state, index) => {
             return (
-                <>
-                    <div key={index} state={state} className="Each-State">
-                        {state[0]}: &nbsp; {(state[1]).toLocaleString({minimumFractionDigits:0})} &nbsp; {((state[1]/totalCases)*100).toFixed(2)}%
-                    
-                    </div>
-                </>
-            )
+                <tr key={index} state={state} className="Each-State">
+                    <td>{state[0]}:</td>
+                    <td>{(state[1]).toLocaleString({minimumFractionDigits:0})}</td>
+                    <td>{((state[1]/totalNumber)*100).toFixed(2)}%</td>
+                </tr>   
+             )
         })
-       
-        return newTableView
+        setTableView(newTableView)
       }
-   let newView=stateConfirmedCases(covidDataImport,'confirmed')
 
    //Alternative Dashboard Views
     if(!covidDataImport) {
         return <div>Dashboard</div>
     } else if(clickOpen){
-        console.log('bottom click open true')
+        let totalNumber = 0
+        if(viewRequest === "Confirmed"){
+            totalNumber=totalCasesComma
+        }else if(viewRequest === "Recovered"){
+            totalNumber=totalRecoveriesComma
+        }else if(viewRequest === "Deaths"){
+            totalNumber=totalDeathsComma
+        }
+
         return (
             <div className="State-Boxes">
-                    <div className="State-Box Total-Cases" style={{position: "fixed", width: "100%"}}>
-                        <p>Total Cases: &nbsp; {totalCases}</p>
-                        <i onClick={handleClickClose} className="fas fa-angle-up"></i>
-                    </div>
-                    <div className="List-Cases" >
+                <div className="State-Box Total-Cases" style={{position: "fixed", width: "100%"}}>
+                    <p>Total {viewRequest}: &nbsp; {totalNumber} </p>
+                    <i onClick={handleUpArrowClick} className="fas fa-angle-up"></i>
+                </div>
+                <table className="List-Cases" >
+                    <tbody>
+                        <tr>
+                            <th>State</th>
+                            <th>Count</th>
+                            <th>% of Total</th>
+                        </tr>
                         {tableView}
-                    </div>
+                    </tbody>
+                </table>
             </div>
         )
     }
@@ -122,16 +142,16 @@ function Dashboard(props){
             <div className="State-Boxes">
                 <div className="State-Box Total-Cases">
                     <p>Total Cases: &nbsp; {totalCasesComma}</p>
-                    <i onClick={()=>handleClick('confirmed')} className="fas fa-angle-down"></i>
+                    <i onClick={()=>handleDownArrowClick('confirmed')} className="fas fa-angle-down"></i>
                         
                 </div>
                 <div className="State-Box Total-Recoveries">
                     <p>Total Recoveries: &nbsp; {totalRecoveriesComma} &nbsp; {totalRecoveryPercent}%</p>
-                    <i onClick={()=>handleClick('recovered')} className="fas fa-angle-down"></i>
+                    <i onClick={()=>handleDownArrowClick('recovered')} className="fas fa-angle-down"></i>
                 </div>
                 <div className="State-Box Total-Deaths">
                     <p>Total Deaths: &nbsp; {totalDeathsComma} &nbsp; {totalDeathsPercent}%</p>
-                    <i onClick={()=>handleClick('deaths')} className="fas fa-angle-down"></i>
+                    <i onClick={()=>handleDownArrowClick('deaths')} className="fas fa-angle-down"></i>
                 </div>
             </div>
         </div>

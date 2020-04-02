@@ -36,7 +36,7 @@ function App() {
     };
     makeApiCall()
   }, []);
-  // console.log("app-data", covidUSData);
+  console.log("app-data", covidUSData);
 
   return (
     <div className="App">

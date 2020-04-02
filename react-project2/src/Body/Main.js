@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch, Redirect} from 'react-router-dom';
 import Dashboard from './Dashboard'
 import USMap from '../Maps/USMap'
+import Contact from './Contact'
 
 
 
@@ -17,6 +18,7 @@ function Main() {
             <Route path ="/USMap" component={USMap} />
             {/* <OnePark path="/:parkID" render={ (routerProps) =>
                 <OnePark {...routerProps} /> } /> */}
+            <Route path ="/Contact" component={Contact} />
             <Redirect to="/" />
         </Switch>
        

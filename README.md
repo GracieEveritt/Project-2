@@ -129,6 +129,7 @@ Sat, Mar 28 | Dashboard Functionality | 4 hours | 4 hours | 4 hours
 Sun, Mar 29 | Added Chart | 2 hours | 2 hours | 2 hours
 Mon, Mar 30 | Incorporated Map | 7 hours | 7 hours | 7 hours
 Tue, Mar 31 | Refactor Code & Functionality | 8 hours | 8 hours | 8 hours
+Wed, Apr 1 | Refactor Code & Functionality | 8 hours | 8 hours | 8 hours
 
 
 
