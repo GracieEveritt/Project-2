@@ -28,7 +28,9 @@ const sortedStates = (array, totalType, totalCases) =>
                 <td>{((state[1]/totalCases)*100).toFixed(2)}%</td>
             </tr>   
          )
-    })
+    
+        })
+    return newTableView
 }
 
 export default sortedStates

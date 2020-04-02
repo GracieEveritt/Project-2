@@ -28,12 +28,12 @@ function Chart(props) {
             height={150}
             options={{
                 mainAspectRation: false,
-                title: {
-                    display: true,
-                    text: "Current US Covid Statistics",
-                    fontSize: 14,
-                    fontColor: "white"
-                },
+                // title: {
+                //     display: true,
+                //     text: "Current US Covid Statistics",
+                //     fontSize: 14,
+                //     fontColor: "white"
+                // },
                 scales:{
                     yAxes: [{
                         

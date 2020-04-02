@@ -6,29 +6,49 @@
   padding: 0;
   
 }
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+
+}
 .App{
   min-width: 320px;
   background-color: #192840;
   height: 100%;
 }
 .Header {
-  /* display: flex; */
-  width: 425px;
-  /* justify-content: space-between; */
   align-items: center;
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
-  height: 40px;
-  overflow: hidden;
-  position: fixed;
-  top:0;
+  height: 30px;
+  /* overflow: hidden; */
+  /* position: fixed;   */
+  /* top:0; */
   background-color: #192840;
 }
-.Top-Nav{
-  
+
+.Hamburger {
+  padding: 15px 0 0 15px;
 }
+.Top-Nav{
+  height: 100%;
+}
+
 .Last-Updated{
   text-align: right;
+  background-color: #192840;
+  padding-right: 10px;
+  /* padding-bottom:30px; */
+}
+.Last-Updated h6{
+   font-weight: 550;
+  
 }
 
 .Main {
@@ -37,9 +57,25 @@
   margin-bottom: 30px;
 }
 
+.Top-Dash-Spacer{
+  /* height: 40px;
+  background-color: #192840; */
+}
+.Stats {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  /* padding-top: 30px; */
+}
 
+.Stats p{
+  font-size: .75rem;
+  font-weight: bold;
+}
 
-Button, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
+.Stats, .Graph-Buttons, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
   background-color: #2C3E5A;
 }
 .State-Boxes{
@@ -50,12 +86,7 @@ Button, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
 .State-Box {
   display: flex;
 }
-.Stats {
- 
-  display: flex;
-  align-items: center;
-  /* justify-content: space-between; */
-}
+
 .Total-Cases, .Total-Recoveries{
   margin-bottom: 5px;
 }
@@ -91,4 +122,10 @@ path {
 path:hover {
   opacity: 0.50;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+ /* //this may be wrong */
+
+
 }

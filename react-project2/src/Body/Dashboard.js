@@ -3,6 +3,8 @@ import {CovidDataContext} from '../App'
 // import {Link} from 'react-router-dom';
 import Chart from './Chart'
 
+import sortedStates from './USData'
+
 
 
 function Dashboard(props){
@@ -44,7 +46,7 @@ function Dashboard(props){
     //These functions dictate what happens when user clicks up/down arrow for more information
     const handleDownArrowClick = (totalType) => {
         setClickOpen(true)
-        sortedStates(covidDataImport,totalType)
+        setTableView(sortedStates(covidDataImport,totalType,totalCases))
         let viewRequsted = totalType.charAt(0).toUpperCase()+totalType.slice(1)
         setViewRequest(viewRequsted)
     }
@@ -54,46 +56,46 @@ function Dashboard(props){
     }
 
     //This function filters by paramater totalType, reduces API objects by State, sorts and calculates analytics
-    const sortedStates = (array, totalType) => {
-        let stateAggregate = {}
-        for(let i=0;i<array.length;i++){
-            let state = covidDataImport[i].province
-            if(stateAggregate[state]){
-                stateAggregate[state] = stateAggregate[state] += covidDataImport[i][totalType]
-            }
-            else{
-                stateAggregate[state]=covidDataImport[i][totalType]
-            }
-        }
-        let sortedStates=[]
-        for(let key in stateAggregate){
-            sortedStates.push([key,stateAggregate[key]])
-        }
-        sortedStates.sort(function(a,b){
-            return b[1]-a[1]
-        })
-        console.log('sorted', sortedStates)
-        let totalNumber = 0
-        console.log('viewRequest',viewRequest)
-        if(totalType === "confirmed"){
-            totalNumber+=totalCases
-        }else if(totalType === "recovered"){
-            totalNumber+=totalRecoveries
-        }else if(totalType === "deaths"){
-            totalNumber+=totalDeaths
-        }
-        console.log('totalNumber',totalNumber)
-        let newTableView = sortedStates.map((state, index) => {
-            return (
-                <tr key={index} state={state} className="Each-State">
-                    <td>{state[0]}:</td>
-                    <td>{(state[1]).toLocaleString({minimumFractionDigits:0})}</td>
-                    <td>{((state[1]/totalNumber)*100).toFixed(2)}%</td>
-                </tr>   
-             )
-        })
-        setTableView(newTableView)
-      }
+    // const sortedStates = (array, totalType) => {
+        // let stateAggregate = {}
+        // for(let i=0;i<array.length;i++){
+        //     let state = covidDataImport[i].province
+        //     if(stateAggregate[state]){
+        //         stateAggregate[state] = stateAggregate[state] += covidDataImport[i][totalType]
+        //     }
+        //     else{
+        //         stateAggregate[state]=covidDataImport[i][totalType]
+        //     }
+        // }
+        // let sortedStates=[]
+        // for(let key in stateAggregate){
+        //     sortedStates.push([key,stateAggregate[key]])
+        // }
+        // sortedStates.sort(function(a,b){
+        //     return b[1]-a[1]
+        // })
+        // console.log('sorted', sortedStates)
+        // let totalNumber = 0
+        // console.log('viewRequest',viewRequest)
+        // if(totalType === "confirmed"){
+        //     totalNumber+=totalCases
+        // }else if(totalType === "recovered"){
+        //     totalNumber+=totalRecoveries
+        // }else if(totalType === "deaths"){
+        //     totalNumber+=totalDeaths
+        // }
+        // console.log('totalNumber',totalNumber)
+        // let newTableView = sortedStates.map((state, index) => {
+        //     return (
+        //         <tr key={index} state={state} className="Each-State">
+        //             <td>{state[0]}:</td>
+        //             <td>{(state[1]).toLocaleString({minimumFractionDigits:0})}</td>
+        //             <td>{((state[1]/totalNumber)*100).toFixed(2)}%</td>
+        //         </tr>   
+        //      )
+        // })
+    //     setTableView(newTableView)
+    //   }
 
    //Alternative Dashboard Views
     if(!covidDataImport) {
@@ -131,9 +133,13 @@ function Dashboard(props){
     return(
         <div className="Dashboard">
             <div className="Stats">
-                <h6>Today is a new day.</h6>
-                <button>US</button>
-                <button>Global</button>
+                <div className="Top-Dash-Spacer" />
+                <p>Current US Covid Stats</p>
+                <div className="Stat-Spacer" />
+                <div className="Graph-Button-Container">
+                    <button className="Graph-Buttons">US</button>
+                    <button className="Graph-Buttons">Global</button>
+                </div>
                 
             </div>
             <div className="Graph">
