@@ -2,3 +2,8 @@
   command = "npm run build"
   publish="react-project2/build"
   base = "react-project2"
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
