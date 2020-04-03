@@ -1,0 +1,91 @@
+.Header {
+align-items: center;
+width: 100%;
+margin: 0 auto;
+height: 30px;
+top: 0;
+overflow: hidden;
+background-color: #192840;
+padding-bottom: 80px;
+}
+#Hamburger {
+font-size: 1.5rem;
+}
+.Hamburger {
+padding: 15px 0 0 15px;
+}
+.Last-Updated{
+text-align: right;
+background-color: #192840;
+padding-right: 10px;
+margin-bottom: 10px;
+padding-top: 20px;
+}
+.Last-Updated h6{
+font-family: Montserrat;
+font-weight: 600;
+color: white;
+font-size: .75rem;
+}
+.Header {
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 30px;
+  top: 0;
+  overflow: hidden;
+  background-color: #192840;
+  padding-bottom: 80px;
+}
+#Hamburger {
+  font-size: 1.5rem;
+}
+.Hamburger {
+  padding: 15px 0 0 15px;
+}
+.Last-Updated{
+  text-align: right;
+  background-color: #192840;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+}
+.Last-Updated h6{
+  font-family: Montserrat;
+  font-weight: 600;
+  color: white;
+  font-size: .75rem;
+}
+
+@media(min-width: 425px){
+    .Header {
+      height: 20px;
+    }
+    .Last-Updated {
+      padding-top: 5px;
+    }
+}
+
+@media(min-width: 768px){
+    #Hamburger {
+        font-size: 2.0rem;
+    }
+    .Last-Updated{
+        margin-bottom: 15px;
+        margin-right: 15px;
+    }
+    .Last-Updated h6{
+        font-size: 1.0rem;
+    }
+}
+@media(min-width: 1024px){
+    
+    #Hamburger {
+        font-size: 2.5rem;
+    }
+    .Last-Updated h6{
+        font-size: 1.2rem;
+        padding-top: 0;
+        padding-bottom: 6px;
+    }
+}

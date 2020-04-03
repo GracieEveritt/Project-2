@@ -1,0 +1,101 @@
+.Stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.Stats p{
+    font-size: .75rem;
+    font-family: Montserrat;
+    font-weight: 600;
+    padding-left: 10px;
+}
+  
+.Stats, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
+    background-color: #2C3E5A;  
+}   
+canvas{
+    width: 100%;
+}    
+.Graph-Button-Container{
+    display: flex;
+    width: 125px;
+    justify-content: space-between;
+    padding-right: 10px;
+} 
+.Graph-Buttons{
+    width: 80px;
+    background-color: #192840;
+    border: none;
+    padding: 4px 0;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+.Graph-Button-US{
+    border-right: 1px solid rgba(255,255,255,.5);
+}
+.Graph {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+  @media(min-width: 425px){   
+    .Graph-Button-Container{
+      width: 175px;
+      padding-right: 15px;
+    }
+  }
+
+  @media(min-width: 768px){ 
+    .Stats {
+      padding-top: 40px;
+      width: 95%;
+      margin: auto;   
+    }
+    .Stats p{
+      font-size: 1.0rem;
+      padding-left: 40px;
+    }
+    .Graph-Button-Container{
+      width: 275px;
+      padding-right: 50px;
+    }
+    .Graph-Buttons{
+      width: 100%;
+      font-size: .8rem;  
+      padding: 6px 0;
+    }
+    .Graph {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width:95%;
+      margin: auto;
+    }
+  }
+  
+  @media(min-width: 1024px){
+    .Stats {
+        padding-bottom: 20px;
+    }
+    .Stats p{
+        font-size: 1.5rem;
+        padding-left: 40px;    
+    }  
+    .Graph-Button-Container{
+        width: 300px;
+        padding-right: 50px;
+    }  
+    .Graph-Buttons{
+        width: 100%;
+        font-size: 1.4rem;  
+        padding: 6px 0;
+    }   
+    .Graph {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width:95%;
+        margin: auto;
+    }  
+  }
+
+

@@ -1,0 +1,209 @@
+*{
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+}
+.App, .Wrapper{
+  min-width: 320px;
+  background-color: #192840;
+  height: 100vh;
+  position: relative;
+}
+.Loading{
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  padding-top: 150px;
+}
+.Main {
+  margin-top: 20px;
+  height: 100%;  
+}
+.State-Boxes{
+  margin: 30px 10px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 12rem;
+}
+.State-Box {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: .9rem;
+  padding: 3.5px;
+  height: 3rem;
+  align-items: center;
+  box-shadow: 1px 1px 1px 3px rgb(141, 140, 140);
+}
+.State-Box p{
+  padding-left: 8px;
+}
+.Total-Cases, .Total-Recoveries{
+  margin-bottom: 10px;
+}
+.State-Box i {
+  padding-right: 10px;
+}
+.List-Cases{
+  margin-top:55px;
+  width: 100%;
+  margin-right: 10px;
+}
+.List-Cases tr {
+  padding: 1px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.List-Cases th {
+  font-family: Montserrat;
+  border-bottom: 1px solid lightgray;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: 2px 0;
+  text-align: left;
+}
+tbody{
+  margin-top: 50px;
+}
+.TD-State, .TH-State {
+  flex-basis: 170px;
+}
+.TH-Count,.TD-Count{
+  width: 75px;
+  text-align: left;
+  flex-grow: 1;
+}
+.TH-Percent, .TD-Percent{
+  text-align: right;
+}
+.Footer{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 3.3rem;
+}
+.Footer-Nav ul{
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
+.Footer-Nav ul li{
+  list-style-type: none;
+}
+.Footer-Nav i {
+  font-size: 1.5rem;
+}
+title{
+  color: black;
+}
+path {
+  pointer-events: all;
+}
+path:hover {
+  opacity: 0.50;
+  cursor: pointer;
+}
+
+@media(min-width: 375px){
+  .State-Boxes {
+    margin: 20px 10px 10px 10px;
+  }
+}
+
+@media(min-width: 425px){
+  .Main {
+    margin-top: 5px;
+  }
+  .State-Boxes {
+    margin: 15px 10px 10px 10px;
+    height: 11rem;
+  }
+}
+
+@media(min-width: 768px){
+  .Main{
+    margin: 20px 20px;
+  }
+  .State-Boxes{
+    margin: auto;
+    margin-top: 12px;
+    width: 95%;
+    height: 11rem;
+  }
+  .State-Box {
+    font-size: 1.2rem;
+  }
+  .Footer{
+    height: 4.3rem;
+  }
+  .Footer-Nav ul{
+    width: 600px;
+  }
+  .Footer-Nav i {
+    font-size: 2.0rem;
+  }
+}
+
+@media(min-width: 1024px){
+  .Main{
+    margin-top: 60px;
+  }
+
+  .Dashboard{
+    margin-top: 60px;
+  }
+  .State-Boxes{
+    margin: auto;
+    margin-top: 40px;
+    width: 95%;
+    height: 25rem;
+  }
+  .State-Box {
+    width: 20%;
+    font-size: 1.2rem;
+    height: 40px;
+  }
+  .State-Box p{
+    font-size: 1.0rem;
+    padding-left: 10px;
+    
+  }
+  .State-Box i{
+    font-size: 1.6rem;
+    padding-right: 10px;
+  }
+  .List-Cases{
+    margin-top: 110px;
+    font-size: 1.2rem;
+  }
+  .Footer{
+    height: 3.3rem;
+  }
+  .Footer-Nav ul{
+    width: 600px;
+  }
+  .Footer-Nav i {
+    font-size: 1.5rem;
+  }
+}

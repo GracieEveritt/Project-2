@@ -1,0 +1,210 @@
+.us-state-map{
+    width: 100%;
+    height: auto;
+  }
+.Map-Buttons{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+ }
+.Map-Button{
+    width: 80px;
+    background-color: #192840;
+    border: 1px solid gray;
+    padding: 4px 0;
+    font-family: Montserrat;
+    font-weight: 500;
+}
+.Map-Cases-Button{
+    color: plum;
+    font-weight: 800;
+}
+.Map-Recoveries-Button{
+    color: lightgreen;
+    font-weight: 800;
+}
+.Map-Deaths-Button{
+    color: #a7a4f9;
+    font-weight: 800;
+}
+.Map-State-Box{
+    font-family: Montserrat;
+    margin: 15px 10px 20px 10px;
+    border: 1px solid white;
+    height: 100%;
+    padding: 5px 10px 10px 10px;
+}
+h1{
+    font-family: Montserrat;
+    font-weight: 500;
+    color: white;
+    font-size: 1.4rem;
+}
+.Map-State-Box div{
+    padding-bottom: 4px;
+    font-size: .9rem;
+}
+table{
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: .8em;
+}
+th{
+    font-weight: 600;
+}
+td{
+  border-bottom: .5px solid white;
+  padding: 4px 3px;
+}
+.Total{
+    text-align: center;
+    padding: 0 4px;
+}
+.Rate{
+    text-align: center;
+}
+.Percent{
+    text-align: center;
+}
+.Rank{
+    text-align: center;
+}
+
+@media(min-width: 375px){
+   .Main{
+       margin-top: 10px;
+   }
+   .Map-State-Box{
+     margin: 10px;
+   }
+   h1{
+    font-family: Montserrat;
+    font-weight: 500;
+    color: white;
+    font-size: 1.2rem;
+   }
+   .Map-State-Box div{
+    padding-bottom: 4px;
+    font-size: .8rem;
+   }
+}
+  
+  @media(min-width: 425px){
+    Table{
+        margin: 0;
+        width: 100%;
+    }
+    h1{
+        font-size: 1.25em;
+        font-weight: 600;
+    }
+    .Map-State-Box{
+        margin: 5px 7px 10px 10px;
+        padding: 5px 7px 5px 5px;
+    }
+    .Map-State-Box div{
+        font-size: .9em;
+        padding-bottom: 2px;  
+    }
+    td {
+      padding: 3px 3px;
+    }
+  }
+  
+  @media(min-width: 768px){ 
+   .Map-Buttons{
+       width: 70%;
+       justify-content: space-around;
+       margin: 0 10px 0 95px;
+       padding: 0;
+       margin-top: 20px;  
+   }
+   .Map-Button{
+      font-size: .8rem;
+      width: 100px;
+   }
+   .us-state-map{
+        width: 50%;
+        height: 40%;
+        margin-left: 175px;
+        margin-top: 15px;
+    }
+    .Map-State-Box{
+        padding: 5px 10px 10px 10px;
+    }
+    .Map-State-Box-Header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 900;
+        padding: 0 5px;
+    }
+    .Map-State-Box-Header h1{
+      font-size: 1.2rem;
+    }
+    .Map-State-Box-Header div{
+      font-size: 1rem;
+    }
+    Table{
+      margin-top: 20px;
+      font-size: .8rem;
+    }
+  }
+  
+  @media(min-width: 1024px) {
+    .USMap{
+      display: grid;
+      height: 80%;
+      grid-template-columns: 60% 40%;
+      grid-template-rows: 10% 75%;
+      grid-gap: 10px;
+      margin-top: 40px;
+    }
+    .us-state-map{
+      grid-column: 1/2;
+      grid-row: 2/3;
+      width: 100%;
+      margin: 0;
+      height: 100%; 
+      margin: auto;
+
+    }
+    .Map-Buttons{
+      grid-column: 1/2;
+      grid-row: 1/2;
+      width: 75%;
+      justify-content: space-between;
+      margin: 0;
+      margin: auto;
+      padding: 0;
+      height: 30px;
+    }
+    .Map-Button{
+      font-size: .8rem;
+      width: 180px;
+      padding: 5px 0;
+    }
+    .Map-State-Box{
+      grid-column: 2/3;
+      grid-row: 2/3;
+      padding: 10px;
+      margin-top: 40px;
+      margin-right: 20px;
+      height: 75%;
+    }
+    .Map-State-Box-Header{
+      display: block;
+    }
+    .Map-State-Box-Header h1{
+      font-size: 1.5rem;
+    }
+    .Map-State-Box-Header div{
+      font-size: 1.0rem;
+      font-weight: 500;
+      padding-top: 5px;
+    }
+    Table{
+      margin-top: 40px;
+      font-size: .8rem;
+    }
+  }

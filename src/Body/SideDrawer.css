@@ -1,0 +1,87 @@
+.Side-Drawer{
+    height: 20%;
+    box-shadow: 1px 0 7px rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    margin-top: 45px;
+    left:0;
+    width: 35%;
+    max-width: 400px;
+    z-index: 200;
+    transform: translateX(-100%);
+    /* moves to left full width; */
+    transition: transform 0.3s ease-out;
+}
+.Side-Drawer.Open-Drawer {
+    transform: translateX(0);
+    margin-top: 45px;
+    /* X moves left to right */
+} 
+.Side-Drawer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background-color: #192840;
+    opacity: 0.9;
+    box-shadow: 1px 0 7px rgba(0,0,0,0.5);
+    margin-left: 5px;
+}
+.Drawer-Li {
+    margin: 0.5rem 0;
+    margin-left: 5px;
+}
+.Li-Middle {
+    margin: 0 10px 0 5px;
+    padding: 8px 0 8px 0;
+    border-top: 2px solid rgba(255,255,255,.5);
+    border-bottom: 2px solid rgba(255,255,255,.5);
+}
+.Side-Drawer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: .8rem;
+    width: 100%;
+    padding-left: 10px;
+}
+.Side-Drawer a:hover,
+.Side-Drawer a:active {
+    color: orange;
+}
+.Backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 100;
+    top:0;
+    left: 0;
+}
+
+@media(min-width: 768px){
+    .Side-Drawer{
+        height: 20%;
+        /* background: white; */
+        margin-top: 55px;
+        width: 25%;
+        max-width: 400px;
+    }
+    .Side-Drawer.Open-Drawer {
+        margin-top: 55px;
+    } 
+    .Side-Drawer a {
+        font-size: 1.0rem;
+        padding-left: 15px;
+    }
+}
+@media(min-width: 1024px){
+    .Side-Drawer a {
+        font-size: 1.5rem;
+        padding-bottom: 15px;
+    }
+    .Side-Drawer li{
+        padding: 10px 0;
+    }
+}

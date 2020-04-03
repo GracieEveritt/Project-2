@@ -1,0 +1,160 @@
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 8px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 6px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+  
+  /* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: gray;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: white;
+    color: gray;
+}
+  /* Add a background color and some padding around the form */
+
+.about_me{
+    padding: 10px;
+    border: 1px solid white;
+    margin: 0 10px 15px 10px;
+    font-size: .9rem;
+}
+.contact {
+    border-radius: 5px;
+
+    margin: 10px ;
+}
+textarea {
+    padding: 30px 10px;
+}
+h3 {
+    font-size: 1.3rem;
+    padding: 3px 0;
+}
+#message, #name, #phone, #email {
+    font-size: .8rem;
+}
+
+/* MOBILE RESPONSIVE */
+@media(min-width: 375px){
+    .contact {
+        
+    
+        margin: 25px 10px ;
+    }
+}
+
+@media(min-width: 768px) {
+    .contact,.about_me {
+        margin-left: 20px;
+    }
+    .about_me {
+        margin-top: 3%;
+        height: 25%;
+        margin-bottom: 1%;
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1.7rem;
+        padding-bottom: 10px;
+    }
+    .contact {
+        margin-top: 20px;
+        margin-bottom: 50px;
+     }
+    .contact_h3 {
+        padding: 3px 0 10px 5px;
+        font-size: 1.7rem;
+    }
+    .contact form {
+        display:grid;
+        grid-gap: 10px;
+        grid-template-areas:
+        'form_text message';
+    }
+    #name, #email, #phone {
+        height: 43px;
+    }
+    .form_text {
+        grid-area: form_text;
+    }
+    #message {
+        grid-area: message;
+        height: 150px;
+    }
+    #phone {
+        float: bottom;
+        margin-top: 112px;
+    }
+    #email {
+        margin-top: 59px;
+    }
+    #message, #name, #phone, #email {
+        font-size: 1.2em;
+    }
+    #submit {
+        width: 120px;
+        font-size: 20px;
+        margin-top: -3px;
+    }
+}
+
+@media(min-width: 1024px) {
+    p {
+        font-size: 1.5rem;
+    }
+    .contact,.about_me {
+        margin-left: 20px;
+    }
+    .about_me {
+        height: 25%;
+
+        margin-bottom: 30px;
+    }
+    h3 {
+        font-size: 2.6rem;
+        padding-bottom: 15px;
+    }
+    .contact, .container {
+        margin-top: 80px;
+    }
+    .contact_h3 {
+        padding: 3px 0 15px 5px;
+        font-size: 2.6rem;
+    }
+    #name, #email, #phone {
+        height: 60px;
+        font-size: 1.4rem;
+    }
+    #message {
+       font-size: 1.5rem;
+       height: 200px;
+    }
+    #phone {
+       margin-top: 145px;
+    }
+    #email {
+       margin-top: 75px;
+    }
+    #submit {
+       width: 150px;
+       padding: 20px 10px;
+       margin-left: 2px;
+       margin-top: 3px;
+       font-size: 1.5rem;
+    }
+}
