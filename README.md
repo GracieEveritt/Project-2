@@ -21,7 +21,7 @@ Build a website from API using React.js & to have fun. I chose to build an analy
           }
         });
 
--Source 3: fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particular_country.php?country=USA", {
+- Source 3: fetch("https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_particular_country.php?country=USA", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",
@@ -33,23 +33,25 @@ Build a website from API using React.js & to have fun. I chose to build an analy
 - [x] Code Snippet
 
 ```
-{
-  "Thailand": [
-    {
-      "date": "2020-1-22",
-      "confirmed": 2,
-      "deaths": 0,
-      "recovered": 0
-    },
-    {
-      "date": "2020-1-23",
-      "confirmed": 3,
-      "deaths": 0,
-      "recovered": 0
-    },  
-    ...  
-  ], 
-  ... 
+0:{8 items
+    "city":"Abbeville"
+    "province":"South Carolina"
+    "country":"US"
+    "lastUpdate":"2020-04-02 23:25:27"
+    "keyId":"Abbeville, South Carolina, US"
+    "confirmed":6
+    "deaths":0
+    "recovered":0
+}
+1:{8 items
+    "city":"Acadia"
+    "province":"Louisiana"
+    "country":"US"
+    "lastUpdate":"2020-04-02 23:25:27"
+    "keyId":"Acadia, Louisiana, US"
+    "confirmed":61
+    "deaths":1
+    "recovered":0
 }
 ```
 
