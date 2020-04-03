@@ -86,17 +86,17 @@ Build a website from API using React.js & to have fun. I chose to build an analy
 #### Post-MVP Requirements
 **To DO** | **In Progress** | **Done**
 ------------|-------------------|-----------  
-|  | Home - Overall (total, recovery, death) - leaders
- |  |  Last Updated - UTC to EST
+|  | | Home - Overall (total, recovery, death) - leaders
+ |  |  | Last Updated - UTC to EST
 Interactive Map - World (hot zone colors) - click to indiv country | |  
- | |  Interactive Map - USA (hot zone colors) - click to indiv state
+ | |  | Interactive Map - USA (hot zone colors) - click to indiv state
 Interactive Map 2nd View: Most Progressive Death Regions - World | |  
- | |  Interactive Map 2nd View: Most Progressive Death Regions - US | |  
-| |  Interactive Map 3nd View: Best Recovery Regions - US 
+ | |  | Interactive Map 2nd View: Most Progressive Death Regions - US | |  
+| |  | Interactive Map 3nd View: Best Recovery Regions - US 
 Individual country page - statistics over time (cases, recovery, death) | |  
- | |  Indivivual state page (cases, recovery, death)
- | | Contact Me Page | Reuse form Project
-Hover for Map | Preview data for Country/State | |
+ | |  | Indivivual state page (cases, recovery, death)
+ | | | Contact Me Page 
+Hover for Map | Preview data for Country/State | |    
   
 ## Components
 
@@ -123,9 +123,9 @@ Thurs, Mar 26 | Final API Research & Ideas | 1 hour | 1 hour | 1 hour
 Thurs, Mar 26 | Update ReadMe | 1 hour | 1 hour | 1 hour
 Thurs, Mar 26 | Wireframes & Architecture | 2 hours | 2 hours | 2 hours
 Fri, Mar 27 | isLoading | 1 hour | 1 hour | 1 hour
-Fri, Mar 27 | Building Mobile Dashboard | 8 hours | 2 hours |
-Fri, Mar 27 | Dashboard Build - Data Sort | 2 hours | 2 hours |
-Fri, Mar 27 | Dashboard API inport debug | 3 hours | 3 hours |
+Fri, Mar 27 | Building Mobile Dashboard | 8 hours | 2 hours | 2 hours
+Fri, Mar 27 | Dashboard Build - Data Sort | 2 hours | 2 hours | 2 hours
+Fri, Mar 27 | Dashboard API inport debug | 3 hours | 3 hours | 3 hours
 Sat, Mar 28 | Dashboard Functionality | 4 hours | 4 hours | 4 hours
 Sun, Mar 29 | Added Chart | 2 hours | 2 hours | 2 hours
 Mon, Mar 30 | Incorporated Map | 7 hours | 7 hours | 7 hours
