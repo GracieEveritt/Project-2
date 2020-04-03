@@ -3,6 +3,7 @@ import USAMap from 'react-usa-map'
 import {CovidDataContext} from '../App'
 import stateIndex from './stateIndex'
 import functionStateData from './StateData'
+import './USMap.css'
 
 
 function USMap () {
@@ -53,44 +54,48 @@ function USMap () {
         
        <div className="USMap">
            <div className="Map-Buttons">
-               <button className="Map-Cases-Button" onClick={()=>handleButtonClick('confirmed')}>Cases</button>
-               <button className="Map-Recoveries-Button" onClick={()=>handleButtonClick('recovered')}>Recoveries</button>
-               <button className="Map-Deaths-Button" onClick={()=>handleButtonClick('death')}>Deaths</button>
+               <button className="Map-Button Map-Cases-Button" onClick={()=>handleButtonClick('confirmed')}>Cases</button>
+               <button className="Map-Button Map-Recoveries-Button" onClick={()=>handleButtonClick('recovered')}>Recoveries</button>
+               <button className="Map-Button Map-Deaths-Button" onClick={()=>handleButtonClick('death')}>Deaths</button>
            </div>
            <USAMap customize={statesCustomConfig()} onClick={mapHandler} />
            <div className="Map-State-Box"> 
-                <h1>State: {stateToDisplay[0].stateName}</h1>
+                <div className="Map-State-Box-Header">
+                <h1>State: &nbsp; {stateToDisplay[0].stateName}</h1>
                 <div>{stateToDisplay[0].confirmedStatus}</div>
                 <div>{stateToDisplay[0].deathStatus} Fatalities</div>
+                </div>
                 <table>
-                    <tbody>
+                    <thead>
                         <tr>
                             <th></th>
-                            <th>Total</th>
-                            <th>Rate</th>
-                            <th>% of US Total</th>
-                            <th>US Ranking</th>
+                            <th className="Total">Total</th>
+                            <th className="Rate">Rate</th>
+                            <th className="Percent">% US Total</th>
+                            <th className="Rank">US Ranking</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>Cases:</td>
-                            <td>{stateToDisplay[0].confirmed}</td>
-                            <td></td>
-                            <td>2.0%</td>
-                            <td>#5</td>
+                            <td className="Total">{stateToDisplay[0].confirmed}</td>
+                            <td className="Rate"></td>
+                            <td className="Percent"> 2.0%</td>
+                            <td className="Rank">#5</td>
                         </tr>
                         <tr>
                             <td>Recoveries:</td>
-                            <td>{stateToDisplay[0].recovered}</td>
-                            <td>{stateToDisplay[0].recoveryRate}%</td>
-                            <td>2.0%</td>
-                            <td>#4</td>
+                            <td className="Total">{stateToDisplay[0].recovered}</td>
+                            <td className="Rate">{stateToDisplay[0].recoveryRate}%</td>
+                            <td className="Percent">2.0%</td>
+                            <td className="Rank">#4</td>
                         </tr>
-                        <tr>
+                        <tr className="Deaths">
                             <td>Deaths:</td>
-                            <td>{stateToDisplay[0].deaths}</td>
-                            <td>{stateToDisplay[0].deathRate}%</td>
-                            <td>2.0%</td>
-                            <td>#3</td>
+                            <td className="Total">{stateToDisplay[0].deaths}</td>
+                            <td className="Rate"> {stateToDisplay[0].deathRate}%</td>
+                            <td className="Percent">2.0%</td>
+                            <td className="Rank">#3</td>
                         </tr>
                     </tbody>
                 </table>

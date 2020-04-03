@@ -69,8 +69,19 @@
     left: 0;
 }
 
-@media (min-width: 769px) {
-    /* .Side-Drawer{
-        display: none;
-    } */
+@media(min-width: 768px){
+    .Side-Drawer{
+        height: 20%;
+        /* background: white; */
+        margin-top: 55px;
+        width: 25%;
+        max-width: 400px;
+    }
+    .Side-Drawer.Open-Drawer {
+        margin-top: 55px;
+    } 
+    .Side-Drawer a {
+        font-size: 1.0rem;
+        padding-left: 15px;
+    }
 }

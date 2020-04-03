@@ -23,9 +23,9 @@ const sortedStates = (array, totalType, totalCases) =>
     let newTableView = sortedStates.map((state, index) => {
         return (
             <tr key={index} state={state} className="Each-State">
-                <td>{state[0]}:</td>
-                <td>{(state[1]).toLocaleString({minimumFractionDigits:0})}</td>
-                <td>{((state[1]/totalCases)*100).toFixed(2)}%</td>
+                <td className="TD-State">{state[0]}:</td>
+                <td className="TD-Count">{(state[1]).toLocaleString({minimumFractionDigits:0})}</td>
+                <td className="TD-Percent">{((state[1]/totalCases)*100).toFixed(2)}%</td>
             </tr>   
          )
     

@@ -72,29 +72,28 @@ Build a website from API using React.js & to have fun. I chose to build an analy
 |  |  | Architecture 
 |  |  | Built using Create-React-App  
 |  |  | Return Data from API  
-| | 5+ Components 
-React Router (2+ routes) | |  
- | Mobile First |  
-Responsive Design | |  
- | React Hooks |  
-Code Clean-Up | |  
-Deployed via Netlify | |  
+| | | 5+ Components 
+ | |  | React Router (2+ routes)
+ |  |  | Mobile First
+ | |  | Responsive Design
+ |  |  | React Hooks
+ | |  | Code Clean-Up
+ | |  | Deployed via Netlify
 
 
 #### Post-MVP Requirements
 **To DO** | **In Progress** | **Done**
 ------------|-------------------|-----------  
-| Home - Overall (total, recovery, death) - leaders |
- | Last Updated - UTC to EST |  
+|  | Home - Overall (total, recovery, death) - leaders
+ |  |  Last Updated - UTC to EST
 Interactive Map - World (hot zone colors) - click to indiv country | |  
-Interactive Map - USA (hot zone colors) - click to indiv state | |  
+ | |  Interactive Map - USA (hot zone colors) - click to indiv state
 Interactive Map 2nd View: Most Progressive Death Regions - World | |  
-Interactive Map 2nd View: Most Progressive Death Regions - US | |  
-Interactive Map 3nd View: Best Recovery Regions - World | |  
-Interactive Map 3nd View: Best Recovery Regions - US | |  
+ | |  Interactive Map 2nd View: Most Progressive Death Regions - US | |  
+| |  Interactive Map 3nd View: Best Recovery Regions - US 
 Individual country page - statistics over time (cases, recovery, death) | |  
-Indivivual state page (cases, recovery, death) | |  
-Contact Me Page | Reuse form Project | |
+ | |  Indivivual state page (cases, recovery, death)
+ | | Contact Me Page | Reuse form Project
 Hover for Map | Preview data for Country/State | |
   
 ## Components
@@ -112,7 +111,7 @@ Publish & Finalize | Publish site & finalize documentation | 1/2 day | Thurs, Ap
 
 ## TimeLine - expect total project (56 hours)
 
-Date | Task | Time Estimate | Time Invested | Actual Time
+Date | Task | Time Estimate | Time Invested | Actual Time (56 hours)
 -----|------|---------------|---------------|------------
 Wed, Mar 25 | ReadMe Basic Build | 1 hours | 1 hr 15 min | 1 hr 15 min
 Wed, Mar 25 | Project Description | 10 min | 10 min | 10 min
@@ -130,6 +129,8 @@ Sun, Mar 29 | Added Chart | 2 hours | 2 hours | 2 hours
 Mon, Mar 30 | Incorporated Map | 7 hours | 7 hours | 7 hours
 Tue, Mar 31 | Refactor Code & Functionality | 8 hours | 8 hours | 8 hours
 Wed, Apr 1 | Refactor Code & Functionality | 8 hours | 8 hours | 8 hours
+Thu, Apr 2 | Responsive | 8 hours | 8 hours | 8 hours
+Fri, Apr 3 | Video & Publish | 2 hours | 2 hours | 2 hours
 
 
 
@@ -138,10 +139,10 @@ Wed, Apr 1 | Refactor Code & Functionality | 8 hours | 8 hours | 8 hours
 2. Map Zoom-Pan: https://www.react-simple-maps.io/examples/zoom-pan/
 3. World Map: https://www.npmjs.com/package/react-world-map
 4. ChartJS: https://www.chartjs.org/docs/latest/charts/bar.html#general
-5. Underscore: https://underscorejs.org/
+5. React-Media: https://github.com/ReactTraining/react-media
 
 
-## Code Snippet
+
 
 
 

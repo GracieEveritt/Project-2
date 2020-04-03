@@ -50,7 +50,15 @@ function Dashboard(props){
         let viewRequsted = totalType.charAt(0).toUpperCase()+totalType.slice(1)
         setViewRequest(viewRequsted)
     }
-    console.log('viewRequest', viewRequest)
+
+    let boxClasses = 'State-Box Total-Cases'
+    if(clickOpen){
+        boxClasses = "State-Box Total-Cases Open-Box"
+    }
+   
+    console.log('SideDrawer-props.show',props.show)
+
+
     const handleUpArrowClick = () => {
         setClickOpen(false)
     }
@@ -112,17 +120,19 @@ function Dashboard(props){
 
         return (
             <div className="State-Boxes">
-                <div className="State-Box Total-Cases" style={{position: "fixed", width: "93%"}}>
+                <div className="State-Box Open-Box"style={{position: "fixed", width: "93%"}}>
                     <p>Total {viewRequest}: &nbsp; {totalNumber} </p>
                     <i onClick={handleUpArrowClick} className="fas fa-angle-up"></i>
                 </div>
                 <table className="List-Cases" >
-                    <tbody>
+                    <thead>
                         <tr>
-                            <th>State</th>
-                            <th>Count</th>
-                            <th>% of Total</th>
+                            <th className="TH-State">State</th>
+                            <th className="TH-Count">Count</th>
+                            <th className="TH-Percent">% of Total</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         {tableView}
                     </tbody>
                 </table>
