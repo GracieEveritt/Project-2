@@ -1,25 +1,20 @@
 *{
-  /* background-color: #192840; */
   color: white;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
-
 html{
   height: 100%;
 }
 #root {
   height: 100%;
 }
-
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   height: 100%;
-
 }
 .App, .Wrapper{
   min-width: 320px;
@@ -27,129 +22,22 @@ body {
   height: 100vh;
   position: relative;
 }
-
 .Loading{
   height: 300px;
   width: 300px;
   text-align: center;
   padding-top: 150px;
-
 }
-
-.Wrapper{
-  /* padding-top: 60px; */
-  /* padding-bottom: 2.5rem; */
-}
-.Header {
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-  height: 30px;
-  /* position: fixed; */
-  top: 0;
-  overflow: hidden;
-  background-color: #192840;
-  padding-bottom: 80px;
-}
-
-#Hamburger {
-  font-size: 1.5rem;
-}
-.Hamburger {
-  padding: 15px 0 0 15px;
-}
-.Top-Nav{
-  
-}
-
-.Last-Updated{
-  text-align: right;
-  background-color: #192840;
-  padding-right: 10px;
-  margin-bottom: 10px;
-  padding-top: 20px;
-  /* padding-bottom:30px; */
-}
-.Last-Updated h6{
-  font-family: Montserrat;
-  font-weight: 600;
-  color: white;
-  font-size: .75rem;
-  
-}
-
 .Main {
-  margin-top: 30px;
-  height: 100%;
-
-  
-}
-
-
-
-.Stats {
- 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-  padding-top: 20px;
-}
-
-.Stats p{
-  font-size: .75rem;
-  font-family: Montserrat;
-  font-weight: 600;
-  padding-left: 10px;
-
-}
-
-.Stats, .Graph, .Total-Cases,.Total-Recoveries, .Total-Deaths, .Footer{
-  background-color: #2C3E5A;
-}
-
-canvas{
-  width: 100%;
-}
-
-
-.Graph-Button-Container{
-  display: flex;
-  width: 125px;
-  justify-content: space-between;
-  padding-right: 10px;
-  
-  
-}
-
-.Graph-Buttons{
-  width: 80px;
-  background-color: #192840;
-  border: none;
-  padding: 4px 0;
-  font-family: Montserrat;
-  font-weight: 500;
-}
-
-.Graph-Button-US{
-  border-right: 1px solid rgba(255,255,255,.5);
-}
-
-.Graph {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  
+  margin-top: 20px;
+  height: 100%;  
 }
 .State-Boxes{
-  margin: 40px 10px 10px 10px;
-
+  margin: 30px 10px 10px 10px;
   display: flex;
-  /* padding: 20px 0; */
   flex-wrap: wrap;
   justify-content: space-between;
-  height: 13rem;
-  
-
+  height: 12rem;
 }
 .State-Box {
   width: 100%;
@@ -160,16 +48,13 @@ canvas{
   font-weight: 500;
   font-size: .9rem;
   padding: 3.5px;
-  /* margin-bottom: 30px; */
   height: 3rem;
   align-items: center;
   box-shadow: 1px 1px 1px 3px rgb(141, 140, 140);
 }
-
 .State-Box p{
   padding-left: 8px;
 }
-
 .Total-Cases, .Total-Recoveries{
   margin-bottom: 10px;
 }
@@ -180,46 +65,33 @@ canvas{
   margin-top:55px;
   width: 100%;
   margin-right: 10px;
-  
 }
 .Open-Box{
   overflow:hidden;
-
 }
-
 .List-Cases tr {
-  
   padding: 1px 0;
   display: flex;
   justify-content: space-between;
- 
 }
-
 .List-Cases th {
   font-family: Montserrat;
   border-bottom: 1px solid lightgray;
   font-weight: 600;
   font-size: .9rem;
   padding: 2px 0;
- 
-  
-  /* flex-basis: 200px; */
   text-align: left;
-  
 }
 tbody{
   margin-top: 50px;
 }
 .TD-State, .TH-State {
-
-flex-basis: 170px;
-
+  flex-basis: 170px;
 }
 .TH-Count,.TD-Count{
   width: 75px;
   text-align: left;
   flex-grow: 1;
- 
 }
 .TH-Percent, .TD-Percent{
   text-align: right;
@@ -232,11 +104,7 @@ flex-basis: 170px;
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  /* background-color: #192840; */
   height: 3.3rem;
-}
-.Footer.Nav{
-
 }
 .Footer-Nav ul{
   display: flex;
@@ -244,18 +112,14 @@ flex-basis: 170px;
   width: 300px;
 }
 .Footer-Nav ul li{
-
   list-style-type: none;
 }
 .Footer-Nav i {
   font-size: 1.5rem;
 }
-
-
 title{
   color: black;
 }
-
 path {
   pointer-events: all;
 }
@@ -264,76 +128,31 @@ path:hover {
   cursor: pointer;
 }
 
-
-
-
-
 @media(min-width: 375px){
   .State-Boxes {
-    margin: 25px 10px 10px 10px;
+    margin: 20px 10px 10px 10px;
   }
 }
 
 @media(min-width: 425px){
-  .Header {
-    height: 20px;
-  }
-  .Last-Updated {
-    padding-top: 5px;
-  }
   .Main {
-    margin-top: 5px
+    margin-top: 5px;
   }
-  .Graph-Button-Container{
-    width: 175px;
-    padding-right: 15px;
+  .State-Boxes {
+    margin: 15px 10px 10px 10px;
+    height: 11rem;
   }
 }
+
 @media(min-width: 768px){
-  #Hamburger {
-    font-size: 2rem;
-  }
-  .Last-Updated{
-    margin-bottom: 15px;
-    margin-right: 15px;
-  }
-  .Last-Updated h6{
-    font-size: 1.0rem;
-  }
   .Main{
-    margin: 10px 20px;
-  }
-  .Stats {
-    padding-top: 20px;
-    width: 95%;
-    margin: auto;
-  }
-  .Stats p{
-    font-size: 1.0rem;
-    padding-left: 40px;
-  }
-  
-  .Graph-Button-Container{
-    width: 275px;
-    padding-right: 50px;
-  }
-  
-  .Graph-Buttons{
-    width: 100%;
-    font-size: .8rem;  
-    padding: 6px 0;
-  }
-    
-  .Graph {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width:95%;
-    margin: auto;
+    margin: 20px 20px;
   }
   .State-Boxes{
     margin: auto;
-    margin-top: 30px;
-    width: 95%
+    margin-top: 40px;
+    width: 95%;
+    height: 14rem;
   }
   .State-Box {
     font-size: 1.2rem;
@@ -346,5 +165,38 @@ path:hover {
   }
   .Footer-Nav i {
     font-size: 2.0rem;
+  }
+}
+
+@media(min-width: 1024px){
+  .Main{
+    margin-top: 60px;
+  }
+
+  .Dashboard{
+    margin-top: 60px;
+  }
+  .State-Boxes{
+    margin: auto;
+    margin-top: 80px;
+    width: 95%;
+    height: 25rem;
+  }
+  .State-Box {
+    font-size: 1.2rem;
+    height: 90px;
+  }
+  .State-Box p{
+    font-size: 1.8rem;
+    padding-left: 20px;
+    
+  }
+  .State-Box i{
+    font-size: 2.6rem;
+    padding-right: 40px;
+  }
+  .List-Cases{
+    margin-top: 110px;
+    font-size: 1.2rem;
   }
 }

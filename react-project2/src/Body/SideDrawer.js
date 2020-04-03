@@ -7,11 +7,8 @@ const SideDrawer = props => {
     if(props.show){
         drawerClasses = "Side-Drawer Open-Drawer"
     }
-   
-    console.log('SideDrawer-props.show',props.show)
     
     return(
-    <>
     <nav className={drawerClasses}>
         <ul>
             <li className="Drawer-Li"><Link to="/">Home</Link></li>
@@ -19,8 +16,6 @@ const SideDrawer = props => {
             <li className="Drawer-Li"><Link to="/Contact">Contact</Link></li>
         </ul>
     </nav>
-   
-    </>
     )
 }
 

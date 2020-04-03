@@ -1,6 +1,6 @@
 input[type=text], select, textarea {
     width: 100%; /* Full width */
-    padding: 10px; /* Some padding */ 
+    padding: 8px; /* Some padding */ 
     border: 1px solid #ccc; /* Gray border */
     border-radius: 4px; /* Rounded borders */
     box-sizing: border-box; /* Make sure that padding and width stays in place */
@@ -30,7 +30,7 @@ input[type=submit]:hover {
 .about_me{
     padding: 10px;
     border: 1px solid white;
-    margin: 0 10px 30px 10px;
+    margin: 0 10px 15px 10px;
     font-size: .9rem;
 }
 .contact {
@@ -39,7 +39,7 @@ input[type=submit]:hover {
     margin: 10px ;
 }
 textarea {
-    padding: 40px 10px;
+    padding: 30px 10px;
 }
 h3 {
     font-size: 1.3rem;
@@ -50,6 +50,14 @@ h3 {
 }
 
 /* MOBILE RESPONSIVE */
+@media(min-width: 375px){
+    .contact {
+        
+    
+        margin: 25px 10px ;
+    }
+}
+
 @media(min-width: 768px) {
     .contact,.about_me {
         margin-left: 20px;
@@ -57,7 +65,7 @@ h3 {
     .about_me {
         margin-top: 3%;
         height: 30%;
-        margin-bottom: 5%;
+        margin-bottom: 3%;
         font-size: 1.2rem;
     }
     h3 {
@@ -107,29 +115,30 @@ h3 {
 
 @media(min-width: 1024px) {
     p {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     .contact,.about_me {
         margin-left: 20px;
     }
     .about_me {
         height: 25%;
+
         margin-bottom: 30px;
     }
     h3 {
-        font-size: 2.0rem;
-        padding-bottom: 10px;
+        font-size: 2.6rem;
+        padding-bottom: 15px;
     }
     .contact, .container {
-        margin-top: 0;
+        margin-top: 80px;
     }
     .contact_h3 {
-        padding: 3px 0 10px 5px;
-        font-size: 2.0rem;
+        padding: 3px 0 15px 5px;
+        font-size: 2.6rem;
     }
     #name, #email, #phone {
         height: 60px;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
     #message {
        font-size: 1.5rem;
@@ -142,8 +151,10 @@ h3 {
        margin-top: 75px;
     }
     #submit {
-       width: 125px;
+       width: 150px;
+       padding: 20px 10px;
        margin-left: 2px;
        margin-top: 3px;
+       font-size: 1.5rem;
     }
 }

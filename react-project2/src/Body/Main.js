@@ -4,27 +4,16 @@ import Dashboard from './Dashboard'
 import USMap from '../Maps/USMap'
 import Contact from './Contact'
 
-
-
-
-
 function Main() {
-  
   
   return (
     <div className="Main">
         <Switch>
             <Route exact path="/" render={routerProps => <Dashboard match={routerProps} />} />
             <Route path ="/USMap" component={USMap} />
-            {/* <OnePark path="/:parkID" render={ (routerProps) =>
-                <OnePark {...routerProps} /> } /> */}
             <Route path ="/Contact" component={Contact} />
             <Redirect to="/" />
         </Switch>
-       
-      
-        
-
     </div>
   );
 }

@@ -4,6 +4,7 @@
 ## Project Links
 -GitHub Repo: (https://github.com/GracieEveritt/Project-2)  
 -Deployment Link:   
+-YouTube Video:  
 
 ## Project Description
 Build a website from API using React.js & to have fun. I chose to build an analytics site for Coronavirus because it is a scary reality for us all. After reviewing other developer's approach to present this same data, I think mine will be unique. Currently, no one has done a dashboard for the US. This dashboard If I have extra time, it would be nice to impelement news as well. 

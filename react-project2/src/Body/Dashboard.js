@@ -63,48 +63,6 @@ function Dashboard(props){
         setClickOpen(false)
     }
 
-    //This function filters by paramater totalType, reduces API objects by State, sorts and calculates analytics
-    // const sortedStates = (array, totalType) => {
-        // let stateAggregate = {}
-        // for(let i=0;i<array.length;i++){
-        //     let state = covidDataImport[i].province
-        //     if(stateAggregate[state]){
-        //         stateAggregate[state] = stateAggregate[state] += covidDataImport[i][totalType]
-        //     }
-        //     else{
-        //         stateAggregate[state]=covidDataImport[i][totalType]
-        //     }
-        // }
-        // let sortedStates=[]
-        // for(let key in stateAggregate){
-        //     sortedStates.push([key,stateAggregate[key]])
-        // }
-        // sortedStates.sort(function(a,b){
-        //     return b[1]-a[1]
-        // })
-        // console.log('sorted', sortedStates)
-        // let totalNumber = 0
-        // console.log('viewRequest',viewRequest)
-        // if(totalType === "confirmed"){
-        //     totalNumber+=totalCases
-        // }else if(totalType === "recovered"){
-        //     totalNumber+=totalRecoveries
-        // }else if(totalType === "deaths"){
-        //     totalNumber+=totalDeaths
-        // }
-        // console.log('totalNumber',totalNumber)
-        // let newTableView = sortedStates.map((state, index) => {
-        //     return (
-        //         <tr key={index} state={state} className="Each-State">
-        //             <td>{state[0]}:</td>
-        //             <td>{(state[1]).toLocaleString({minimumFractionDigits:0})}</td>
-        //             <td>{((state[1]/totalNumber)*100).toFixed(2)}%</td>
-        //         </tr>   
-        //      )
-        // })
-    //     setTableView(newTableView)
-    //   }
-
    //Alternative Dashboard Views
     if(!covidDataImport) {
         return <div >Dashboard</div>
@@ -143,14 +101,12 @@ function Dashboard(props){
     return(
         <div className="Dashboard">
             <div className="Stats">
-                {/* <div className="Top-Dash-Spacer" /> */}
                 <p>Current US Covid Stats</p>
                 <div className="Stat-Spacer" />
                 <div className="Graph-Button-Container">
                     <button className="Graph-Buttons Graph-Button-US">US</button>
                     <button className="Graph-Buttons">Global</button>
                 </div>
-                
             </div>
             <div className="Graph">
                 <Chart totalCases={totalCases} totalDeaths={totalDeaths} totalRecoveries={totalRecoveries} />
@@ -159,7 +115,6 @@ function Dashboard(props){
                 <div className="State-Box Total-Cases">
                     <p>Total Cases: &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{totalCasesComma}</p>
                     <i onClick={()=>handleDownArrowClick('confirmed')} className="fas fa-angle-down"></i>
-                        
                 </div>
                 <div className="State-Box Total-Recoveries">
                     <p>Total Recoveries: &nbsp; {totalRecoveriesComma} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {totalRecoveryPercent}%</p>

@@ -1,75 +1,67 @@
 .us-state-map{
     width: 100%;
     height: auto;
-  
-    
   }
-
-  .Map-Buttons{
+.Map-Buttons{
     display: flex;
-     justify-content: space-around;
-     padding-bottom: 10px;
- 
-  }
-  .Map-Button{
+    justify-content: space-around;
+    padding-bottom: 10px;
+ }
+.Map-Button{
     width: 80px;
     background-color: #192840;
     border: 1px solid gray;
     padding: 4px 0;
     font-family: Montserrat;
     font-weight: 500;
-  }
-  .Map-Cases-Button{
+}
+.Map-Cases-Button{
     color: plum;
     font-weight: 800;
-  }
-
-  .Map-Recoveries-Button{
+}
+.Map-Recoveries-Button{
     color: lightgreen;
     font-weight: 800;
-  }
-
-  .Map-Deaths-Button{
+}
+.Map-Deaths-Button{
     color: #a7a4f9;
     font-weight: 800;
-  }
-  .Map-State-Box{
+}
+.Map-State-Box{
     font-family: Montserrat;
-      margin: 15px 10px 20px 10px;
-      border: 1px solid white;
-      height: 100%;
-      padding: 10px 10px 20px 10px;
-     
-      
-  }
-  h1{
+    margin: 15px 10px 20px 10px;
+    border: 1px solid white;
+    height: 100%;
+    padding: 5px 10px 10px 10px;
+}
+h1{
     font-family: Montserrat;
     font-weight: 500;
     color: white;
-  }
-  .Map-State-Box div{
-    padding-bottom: 5px;
-  }
-  table{
+    font-size: 1.4rem;
+}
+.Map-State-Box div{
+    padding-bottom: 4px;
+    font-size: .9rem;
+}
+table{
     font-family: Montserrat;
     font-weight: 400;
     font-size: .8em;
-  }
-  th{
-      font-weight: 600;
-      
-  }
-  td{
-    border-bottom: .5px solid white;
-    padding: 4px 3px;
-  }
+}
+th{
+    font-weight: 600;
+}
+td{
+  border-bottom: .5px solid white;
+  padding: 4px 3px;
+}
 .Total{
     text-align: center;
     padding: 0 4px;
 }
 .Rate{
     text-align: center;
-    
 }
 .Percent{
     text-align: center;
@@ -82,73 +74,63 @@
    .Main{
        margin-top: 10px;
    }
-  }
+   .Map-State-Box{
+     margin: 10px;
+   }
+   h1{
+    font-family: Montserrat;
+    font-weight: 500;
+    color: white;
+    font-size: 1.2rem;
+   }
+   .Map-State-Box div{
+    padding-bottom: 4px;
+    font-size: .8rem;
+   }
+}
   
   @media(min-width: 425px){
-    .Header {
-      height: 10px;
-    }
-    .Last-Updated {
-      margin-bottom: 0;
-    }
-    .Main {
-      margin-top: 5px
-    }
     Table{
         margin: 0;
         width: 100%;
-        padding-top: 4px;
     }
     h1{
         font-size: 1.25em;
-        font-weight: 700;
+        font-weight: 600;
     }
     .Map-State-Box{
-        margin: 15px 7px 10px 10px;
-        padding: 7px 7px 15px 10px;
+        margin: 5px 7px 10px 10px;
+        padding: 5px 7px 5px 5px;
     }
     .Map-State-Box div{
         font-size: .9em;
-        padding-bottom: 2px;
-       
+        padding-bottom: 2px;  
     }
-   
+    td {
+      padding: 3px 3px;
+    }
   }
-  @media(min-width: 768px){
-    #Hamburger {
-      font-size: 1.5rem;
-    }
-    .Header{
-        height: 60px;
-        padding: 0;
-    }
-    .Main{
-        margin: 5px 20px;
-    }
-    .Last-Updated{
-        padding: 0 10px 0 0 ;
-      margin-bottom: 5px;
-      margin-right: 15px;
-    }
-    .Last-Updated h6{
-      font-size: 1.0rem;
-    }
-    .Main{
-      margin: 10px 20px;
-    }
+  
+  @media(min-width: 768px){ 
    .Map-Buttons{
        width: 70%;
        justify-content: space-around;
        margin: 0 10px 0 150px;
        padding: 0;
+       margin-top: 40px;  
+   }
+   .Map-Button{
+      font-size: 1rem;
+      width: 120px;
    }
    .us-state-map{
         width: 75%;
         height: 40%;
         margin-left: 95px;
+        margin-top: 30px;
     }
     .Map-State-Box{
-        padding: 7px 7px 10px 10px;
+        padding: 10px 10px 20px 10px;
     }
     .Map-State-Box-Header{
         display: flex;
@@ -157,19 +139,46 @@
         font-weight: 900;
         padding: 0 5px;
     }
-    .Footer{
-      height: 3.3rem;
+    .Map-State-Box-Header h1{
+      font-size: 1.6rem;
     }
-    .Footer-Nav ul{
-      width: 600px;
+    .Map-State-Box-Header div{
+      font-size: 1rem;
     }
-    .Footer-Nav i {
-      font-size: 2.0rem;
+    Table{
+      margin-top: 20px;
+      font-size: 1rem;
     }
   }
+  
   @media(min-width: 1024px) {
-      .us-state-map{
-          width: 55%;
-          margin-left: 23%; 
-      }
+    .us-state-map{
+        width: 90%;
+        margin-left: 5%; 
+    }
+    .Map-Buttons{
+      width: 70%;
+      justify-content: space-around;
+      margin: 80px 10px 0 150px;
+      padding: 0;
+    }
+    .Map-Button{
+      font-size: 1.6rem;
+      width: 180px;
+      padding: 5px 0;
+    }
+    .Map-State-Box{
+      padding: 30px;
+      margin-top: 40px;
+    }
+    .Map-State-Box-Header h1{
+      font-size: 2rem;
+    }
+    .Map-State-Box-Header div{
+      font-size: 1.3rem;
+    }
+    Table{
+      margin-top: 20px;
+      font-size: 1.6rem;
+    }
   }

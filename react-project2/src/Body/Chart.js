@@ -1,17 +1,14 @@
 import React from 'react';
 import {HorizontalBar, defaults} from 'react-chartjs-2'
 import Media from 'react-media'
-
+import './Chart.css'
 
 defaults.global.defaultFontFamily = "Montserrat"
 defaults.global.defaultFontColor = "white"
 defaults.global.defaultFontWeight = "500"
 
-
-
 function Chart(props) {
     
-
     const chartData = {
         labels: ['Cases', 'Recvrd', "Deaths"], //x axis
         datasets: [{
@@ -65,12 +62,9 @@ function Chart(props) {
                 }
             }}
         />}
-
-        
-
                 {matches.medium && <HorizontalBar 
             data={chartData}
-            height={75}
+            height={120}
             options={{
                 mainAspectRation: false,
                 legend:{
@@ -103,7 +97,7 @@ function Chart(props) {
         />}
                 {matches.large && <HorizontalBar 
             data={chartData}
-            height={75}
+            height={125}
             options={{
                 mainAspectRation: false,
                 legend:{
@@ -115,7 +109,7 @@ function Chart(props) {
                     yAxes: [{
                         ticks: {
                             fontColor: "white",
-                            fontSize: 12,
+                            fontSize: 16,
                             fontweight: "500"
                         }
                     }],
@@ -123,7 +117,7 @@ function Chart(props) {
                         ticks: {
                             offset: false,
                             fontColor: "white",
-                            fontSize: 10,
+                            fontSize: 16,
                             fontweight: "500",
                             beginAtZero: false,
                         }
