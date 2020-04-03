@@ -5,7 +5,8 @@ import Main from './Body/Main'
 import Footer from './Body/Footer'
 import SideDrawer from './Body/SideDrawer'
 import Backdrop from './Body/Backdrop'
-import testData from './testData'
+//This import is necessary if API is down
+// import testData from './testData'
 
 export const CovidDataContext = React.createContext()
   
@@ -37,7 +38,6 @@ function App() {
       console.log('API-Data', json)
       setCovidUSData(json.data.covid19Stats);
       setLastUpdated(json.data.lastChecked);
-      setCovidUSData(testData)
       setisLoading(false);
     };
     makeApiCall()

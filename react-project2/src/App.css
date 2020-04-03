@@ -66,9 +66,6 @@ body {
   width: 100%;
   margin-right: 10px;
 }
-.Open-Box{
-  overflow:hidden;
-}
 .List-Cases tr {
   padding: 1px 0;
   display: flex;
@@ -150,9 +147,9 @@ path:hover {
   }
   .State-Boxes{
     margin: auto;
-    margin-top: 40px;
+    margin-top: 12px;
     width: 95%;
-    height: 14rem;
+    height: 11rem;
   }
   .State-Box {
     font-size: 1.2rem;
@@ -178,25 +175,35 @@ path:hover {
   }
   .State-Boxes{
     margin: auto;
-    margin-top: 80px;
+    margin-top: 40px;
     width: 95%;
     height: 25rem;
   }
   .State-Box {
+    width: 20%;
     font-size: 1.2rem;
-    height: 90px;
+    height: 40px;
   }
   .State-Box p{
-    font-size: 1.8rem;
-    padding-left: 20px;
+    font-size: 1.0rem;
+    padding-left: 10px;
     
   }
   .State-Box i{
-    font-size: 2.6rem;
-    padding-right: 40px;
+    font-size: 1.6rem;
+    padding-right: 10px;
   }
   .List-Cases{
     margin-top: 110px;
     font-size: 1.2rem;
+  }
+  .Footer{
+    height: 3.3rem;
+  }
+  .Footer-Nav ul{
+    width: 600px;
+  }
+  .Footer-Nav i {
+    font-size: 1.5rem;
   }
 }

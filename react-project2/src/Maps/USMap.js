@@ -15,11 +15,12 @@ function USMap () {
     //This function bridges API data with Map; compiles API data by State; calculates further analysis by State 
     useEffect(() => {
         let summaryByState = functionStateData(stateIndex,covidDataImport)
-        console.log('summaryMap before' )
         setSummaryMapData(summaryByState)
-        console.log('summaryMap after' )
-    }, [covidDataImport]);
-// console.log('summary', summaryByState)
+    }, []);
+  
+    //This is visible so you can see the data in console log
+    console.log('MyStateSummaries', summaryMapData)
+
     //This function returns which State user clicked on the Map 
     let mapHandler = (event) => {
         let stateClicked = event.target.dataset.name

@@ -64,7 +64,7 @@ function Chart(props) {
         />}
                 {matches.medium && <HorizontalBar 
             data={chartData}
-            height={120}
+            height={75}
             options={{
                 mainAspectRation: false,
                 legend:{
@@ -97,7 +97,7 @@ function Chart(props) {
         />}
                 {matches.large && <HorizontalBar 
             data={chartData}
-            height={125}
+            height={45}
             options={{
                 mainAspectRation: false,
                 legend:{

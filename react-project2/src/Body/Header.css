@@ -79,10 +79,13 @@ font-size: .75rem;
     }
 }
 @media(min-width: 1024px){
+    
     #Hamburger {
         font-size: 2.5rem;
     }
     .Last-Updated h6{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        padding-top: 0;
+        padding-bottom: 6px;
     }
 }

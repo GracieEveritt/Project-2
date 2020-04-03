@@ -115,22 +115,22 @@ td{
    .Map-Buttons{
        width: 70%;
        justify-content: space-around;
-       margin: 0 10px 0 150px;
+       margin: 0 10px 0 95px;
        padding: 0;
-       margin-top: 40px;  
+       margin-top: 20px;  
    }
    .Map-Button{
-      font-size: 1rem;
-      width: 120px;
+      font-size: .8rem;
+      width: 100px;
    }
    .us-state-map{
-        width: 75%;
+        width: 50%;
         height: 40%;
-        margin-left: 95px;
-        margin-top: 30px;
+        margin-left: 175px;
+        margin-top: 15px;
     }
     .Map-State-Box{
-        padding: 10px 10px 20px 10px;
+        padding: 5px 10px 10px 10px;
     }
     .Map-State-Box-Header{
         display: flex;
@@ -140,45 +140,71 @@ td{
         padding: 0 5px;
     }
     .Map-State-Box-Header h1{
-      font-size: 1.6rem;
+      font-size: 1.2rem;
     }
     .Map-State-Box-Header div{
       font-size: 1rem;
     }
     Table{
       margin-top: 20px;
-      font-size: 1rem;
+      font-size: .8rem;
     }
   }
   
   @media(min-width: 1024px) {
+    .USMap{
+      display: grid;
+      height: 80%;
+      grid-template-columns: 60% 40%;
+      grid-template-rows: 10% 75%;
+      grid-gap: 10px;
+      margin-top: 40px;
+    }
     .us-state-map{
-        width: 90%;
-        margin-left: 5%; 
+      grid-column: 1/2;
+      grid-row: 2/3;
+      width: 100%;
+      margin: 0;
+      height: 100%; 
+      margin: auto;
+
     }
     .Map-Buttons{
-      width: 70%;
-      justify-content: space-around;
-      margin: 80px 10px 0 150px;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      width: 75%;
+      justify-content: space-between;
+      margin: 0;
+      margin: auto;
       padding: 0;
+      height: 30px;
     }
     .Map-Button{
-      font-size: 1.6rem;
+      font-size: .8rem;
       width: 180px;
       padding: 5px 0;
     }
     .Map-State-Box{
-      padding: 30px;
+      grid-column: 2/3;
+      grid-row: 2/3;
+      padding: 10px;
       margin-top: 40px;
+      margin-right: 20px;
+      height: 75%;
+    }
+    .Map-State-Box-Header{
+      display: block;
     }
     .Map-State-Box-Header h1{
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .Map-State-Box-Header div{
-      font-size: 1.3rem;
+      font-size: 1.0rem;
+      font-weight: 500;
+      padding-top: 5px;
     }
     Table{
-      margin-top: 20px;
-      font-size: 1.6rem;
+      margin-top: 40px;
+      font-size: .8rem;
     }
   }

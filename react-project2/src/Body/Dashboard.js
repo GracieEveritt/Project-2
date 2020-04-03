@@ -33,7 +33,7 @@ function Dashboard(props){
             setTotalDeaths(totalDeaths)
         }
         setTotals(covidDataImport)
-    }, [covidDataImport]);
+    }, []);
 
     //The following formats values
     let totalRecoveryPercent = ((totalRecoveries/totalCases)*100).toFixed(2)
@@ -42,7 +42,6 @@ function Dashboard(props){
     let totalRecoveriesComma = (totalRecoveries).toLocaleString({minimumFractionDigits:0})
     let totalDeathsComma = (totalDeaths).toLocaleString({minimumFractionDigits:0})
     
-
     //These functions dictate what happens when user clicks up/down arrow for more information
     const handleDownArrowClick = (totalType) => {
         setClickOpen(true)
@@ -50,14 +49,6 @@ function Dashboard(props){
         let viewRequsted = totalType.charAt(0).toUpperCase()+totalType.slice(1)
         setViewRequest(viewRequsted)
     }
-
-    let boxClasses = 'State-Box Total-Cases'
-    if(clickOpen){
-        boxClasses = "State-Box Total-Cases Open-Box"
-    }
-   
-    console.log('SideDrawer-props.show',props.show)
-
 
     const handleUpArrowClick = () => {
         setClickOpen(false)
